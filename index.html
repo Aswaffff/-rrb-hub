@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <title>RRB Hub — Your Complete RRB Study Partner | Malayalam, English &amp; Hindi PDFs</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7/dist/umd/supabase.min.js"></script>
+  <script>
+    // Public Frontend Environment Configuration (Publishable Keys Only — Never put secret keys here)
+    window.__RRB_HUB_ENV__ = window.__RRB_HUB_ENV__ || {
+      VITE_SUPABASE_URL: "https://dujgqwzxxmpdsikhkhbk.supabase.co",
+      VITE_SUPABASE_ANON_KEY: "sb_publishable_feb6_kXW2mlweliMCv73Rg_6NdCVwIe",
+      VITE_SUPABASE_PUBLISHABLE_KEY: "sb_publishable_feb6_kXW2mlweliMCv73Rg_6NdCVwIe",
+      VITE_RAZORPAY_KEY_ID: "rzp_live_U1gSJ0k5nhc192"
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Malayalam:wght@500;700;800&family=Noto+Sans+Devanagari:wght@500;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rrb: {
+              red: '#ED1010',
+              redDark: '#C80D0D',
+              redLight: '#FEF2F2',
+              redBorder: '#FECACA',
+              navy: '#111827',
+              slate: '#374151',
+              muted: '#6B7280'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans Malayalam', 'Noto Sans Devanagari', 'sans-serif']
+          },
+          boxShadow: {
+            'card': '0 10px 30px -5px rgba(17, 24, 39, 0.07), 0 4px 12px -2px rgba(17, 24, 39, 0.04)',
+            'card-hover': '0 20px 40px -10px rgba(237, 16, 16, 0.14), 0 8px 20px -4px rgba(17, 24, 39, 0.08)',
+            'pill': '0 6px 20px -3px rgba(237, 16, 16, 0.38)',
+            'book': '8px 12px 24px rgba(17, 24, 39, 0.28), -2px 0 6px rgba(0,0,0,0.15)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans Malayalam', 'Noto Sans Devanagari', sans-serif;
+      background-color: #FFFFFF;
+      color: #111827;
+      overflow-x: hidden;
+    }
+    /* Realistic 3D Standing Book Styling Inspired by Reference Image */
+    .book-3d {
+      position: relative;
+      border-radius: 6px 14px 14px 6px;
+      box-shadow: 10px 14px 28px rgba(17, 24, 39, 0.26), inset 5px 0 10px rgba(255, 255, 255, 0.25), inset -2px 0 5px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+    .book-3d::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 12px;
+      background: linear-gradient(90deg, rgba(0,0,0,0.38) 0%, rgba(255,255,255,0.28) 45%, rgba(0,0,0,0.18) 100%);
+      border-radius: 6px 0 0 6px;
+      z-index: 20;
+    }
+    .book-3d::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      right: -5px;
+      width: 5px;
+      background: repeating-linear-gradient(90deg, #f8fafc 0px, #e2e8f0 1px, #ffffff 2px);
+      border-radius: 0 3px 3px 0;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.18);
+    }
+    .product-card:hover .book-3d {
+      transform: translateY(-6px) rotate(-1.5deg) scale(1.02);
+      box-shadow: 14px 20px 34px rgba(237, 16, 16, 0.22), inset 5px 0 10px rgba(255, 255, 255, 0.3);
+    }
+    .hero-dot-grid {
+      background-image: radial-gradient(#FCA5A5 2px, transparent 2px);
+      background-size: 16px 16px;
+    }
+    .red-wave-bg {
+      background: linear-gradient(135deg, #ED1010 0%, #C80D0D 100%);
+    }
+  </style>
+</head>
+<body class="bg-white text-rrb-navy antialiased selection:bg-rrb-red selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT / INDEPENDENT DISCLOSURE BAR -->
+  <div class="bg-rrb-navy text-white text-xs py-2 px-4 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-rrb-red animate-pulse"></span>
+        <span class="font-medium text-gray-200">RRB Hub — Malayalam, English &amp; Hindi Study Material PDFs · Fixed ₹151 per edition</span>
+      </div>
+      <div class="flex items-center gap-4 text-gray-300">
+        <span>Support: <a href="mailto:rrbhub@gmail.com" class="text-white underline hover:text-red-300 font-medium">rrbhub@gmail.com</a></span>
+        <span class="hidden sm:inline text-gray-500">|</span>
+        <span class="hidden sm:inline text-gray-400">Independent seller · Not affiliated with Indian Railways or RRB</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVIGATION BAR (MATCHING REFERENCE DESIGN) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
+      
+      <!-- Brand Logo (Existing RRB Hub Railway + Open Book Emblem) -->
+      <button type="button" id="navLogoBtn" class="flex items-center gap-3 text-left group focus:outline-none">
+        <div class="w-12 h-12 rounded-xl bg-rrb-red flex items-center justify-center text-white shadow-pill group-hover:scale-105 transition-transform flex-shrink-0">
+          <!-- Open Book + Railway Track + Train Emblem -->
+          <svg class="w-8 h-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 16C16 14 26 16 32 21C38 16 48 14 56 16V48C48 46 38 48 32 53C26 48 16 46 8 48V16Z" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="rgba(255,255,255,0.12)"/>
+            <rect x="23" y="13" width="18" height="20" rx="4" fill="white" />
+            <rect x="26" y="16" width="5" height="5" rx="1" fill="#ED1010" />
+            <rect x="33" y="16" width="5" height="5" rx="1" fill="#ED1010" />
+            <circle cx="27.5" cy="27.5" r="2" fill="#ED1010" />
+            <circle cx="36.5" cy="27.5" r="2" fill="#ED1010" />
+            <path d="M24 35L19 46M40 35L45 46M21 39H43M19 44H45" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-1 leading-none">
+            <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-rrb-navy">RRB</span>
+            <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-rrb-red">Hub</span>
+          </div>
+          <p class="text-[11px] font-semibold tracking-wider uppercase text-gray-500 mt-0.5">Study • Prepare • Succeed</p>
+        </div>
+      </button>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+        <button type="button" data-nav="home" class="nav-link px-4 py-2 rounded-full text-sm font-bold bg-rrb-red text-white shadow-sm transition-all">Home</button>
+        <button type="button" data-nav="materials" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-rrb-navy hover:text-rrb-red hover:bg-red-50 transition-all">Study Materials</button>
+        <button type="button" data-nav="about" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-rrb-navy hover:text-rrb-red hover:bg-red-50 transition-all">About</button>
+        <button type="button" data-nav="faq" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-rrb-navy hover:text-rrb-red hover:bg-red-50 transition-all">FAQ</button>
+        <button type="button" data-nav="contact" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-rrb-navy hover:text-rrb-red hover:bg-red-50 transition-all">Contact</button>
+        <button type="button" data-nav="admin" class="nav-link px-3.5 py-2 rounded-full text-xs font-bold text-gray-600 hover:text-rrb-red border border-gray-200 hover:border-red-200 ml-1 flex items-center gap-1.5 transition-all">
+          <svg class="w-3.5 h-3.5 text-rrb-red" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          Admin Dashboard
+          <span id="navPendingBadge" class="hidden px-1.5 py-0.5 text-[10px] rounded-full bg-red-100 text-rrb-red font-extrabold">0</span>
+        </button>
+      </nav>
+
+      <!-- Language Selector Pill + Primary CTA Button -->
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="relative flex items-center bg-gray-100 hover:bg-gray-200/70 rounded-full px-3 py-1.5 border border-gray-200 transition-colors">
+          <svg class="w-4 h-4 text-rrb-navy mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/>
+          </svg>
+          <label for="headerLangFilter" class="sr-only">Filter Study Material Language</label>
+          <select id="headerLangFilter" class="bg-transparent text-xs font-bold text-rrb-navy focus:outline-none cursor-pointer pr-1">
+            <option value="ALL">All 3 Languages</option>
+            <option value="Malayalam PDF">Malayalam PDF (മലയാളം)</option>
+            <option value="English PDF">English PDF</option>
+            <option value="Hindi PDF">Hindi PDF (हिन्दी)</option>
+          </select>
+        </div>
+
+        <button type="button" id="headerExploreBtn" class="bg-rrb-red hover:bg-rrb-redDark text-white font-bold text-sm px-5 py-2.5 rounded-full shadow-pill flex items-center gap-2 transition-all transform hover:-translate-y-0.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          <span>Study Materials · ₹151</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button type="button" id="mobileShopQuickBtn" class="sm:hidden bg-rrb-red text-white text-xs font-bold px-3.5 py-2 rounded-full shadow-sm">
+          Buy ₹151
+        </button>
+        <button type="button" id="mobileMenuBtn" class="p-2.5 rounded-xl border border-gray-200 text-rrb-navy hover:bg-gray-50 focus:outline-none" aria-label="Toggle Menu">
+          <svg id="mobileMenuIconOpen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="mobileMenuIconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenuDrawer" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-5 space-y-2 shadow-xl">
+      <div class="grid grid-cols-2 gap-2 pt-1">
+        <button type="button" data-nav="home" class="mobile-nav-btn text-left px-4 py-2.5 rounded-xl text-sm font-bold bg-red-50 text-rrb-red">Home</button>
+        <button type="button" data-nav="materials" class="mobile-nav-btn text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-rrb-navy hover:bg-gray-50">Study Materials</button>
+        <button type="button" data-nav="about" class="mobile-nav-btn text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-rrb-navy hover:bg-gray-50">About RRB Hub</button>
+        <button type="button" data-nav="faq" class="mobile-nav-btn text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-rrb-navy hover:bg-gray-50">FAQ</button>
+        <button type="button" data-nav="contact" class="mobile-nav-btn text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-rrb-navy hover:bg-gray-50">Contact Us</button>
+        <button type="button" data-nav="admin" class="mobile-nav-btn text-left px-4 py-2.5 rounded-xl text-sm font-bold text-rrb-navy bg-gray-100">Admin Dashboard</button>
+      </div>
+      <div class="pt-2 border-t border-gray-100 flex items-center justify-between gap-2">
+        <select id="mobileLangFilter" class="flex-1 bg-gray-100 text-xs font-bold text-rrb-navy rounded-xl px-3 py-2.5 border border-gray-200">
+          <option value="ALL">Show All 3 Languages</option>
+          <option value="Malayalam PDF">Malayalam PDF (₹151)</option>
+          <option value="English PDF">English PDF (₹151)</option>
+          <option value="Hindi PDF">Hindi PDF (₹151)</option>
+        </select>
+        <button type="button" id="mobileDrawerExploreBtn" class="bg-rrb-red text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm">
+          Explore PDFs →
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 1: PUBLIC STOREFRONT (HOME, STUDY MATERIALS, ABOUT, FAQ, CONTACT) -->
+  <!-- ===================================================================== -->
+  <main id="storefrontView">
+
+    <!-- B. HERO SECTION (FOLLOWING REFERENCE VISUAL DESIGN + EXACT PROMPT HEADINGS) -->
+    <section id="heroSection" class="relative overflow-hidden bg-gradient-to-b from-white via-red-50/20 to-white pt-6 pb-16 lg:pt-10 lg:pb-20">
+      <!-- Decorative Subtle Red Dot Pattern from Reference -->
+      <div class="hero-dot-grid w-28 h-28 absolute top-6 left-1/2 -translate-x-12 opacity-60 pointer-events-none hidden lg:block"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          
+          <!-- Left Column: Hero Copy & Real Feature Checkmarks -->
+          <div class="lg:col-span-6 space-y-6 z-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-rrb-red text-xs font-extrabold uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-rrb-red"></span>
+              <span>Your Railway Dream Starts Here!</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl xl:text-[54px] font-black text-rrb-navy tracking-tight leading-[1.12]">
+              Your Complete <br class="hidden sm:inline" />
+              <span class="text-rrb-red">RRB</span> Study Partner
+            </h1>
+
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed max-w-xl font-medium">
+              Quality RRB study materials to help you prepare confidently for your examinations. Clear, topic-wise notes available in the language you read best.
+            </p>
+
+            <!-- Real Verified Features (Replaced "Instant Download" with real purchase & delivery details) -->
+            <ul class="space-y-3 pt-1">
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold text-rrb-navy">
+                <span class="w-6 h-6 rounded-full bg-rrb-red text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span>Malayalam, English &amp; Hindi PDFs — <strong>₹151</strong> per language</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold text-rrb-navy">
+                <span class="w-6 h-6 rounded-full bg-rrb-red text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span>Easy &amp; Secure Razorpay Payment (UPI, Cards, NetBanking)</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold text-rrb-navy">
+                <span class="w-6 h-6 rounded-full bg-rrb-red text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span>Verified Order &amp; Personal Email Delivery to Your Registered Email</span>
+              </li>
+            </ul>
+
+            <!-- CTA Buttons (No fake "Watch Demo" button) -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <button type="button" id="heroExploreBtn" class="bg-rrb-red hover:bg-rrb-redDark text-white font-extrabold text-base px-7 py-4 rounded-full shadow-pill flex items-center gap-3 transition-all transform hover:-translate-y-0.5">
+                <span>Explore Study Materials</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+
+              <button type="button" id="heroHowItWorksBtn" class="bg-white hover:bg-red-50 text-rrb-navy font-bold text-sm sm:text-base px-6 py-4 rounded-full border-2 border-red-200 hover:border-rrb-red flex items-center gap-2.5 transition-all">
+                <span class="w-6 h-6 rounded-full bg-red-100 text-rrb-red flex items-center justify-center font-extrabold text-xs">₹</span>
+                <span>How Buying Works</span>
+              </button>
+            </div>
+
+            <!-- Language Quick-Select Pills -->
+            <div class="pt-1 flex flex-wrap items-center gap-2 text-xs text-gray-600">
+              <span class="font-bold text-rrb-navy">Available Editions:</span>
+              <button type="button" data-quick-buy="Malayalam PDF" class="quick-buy-pill px-3 py-1 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-900 font-bold border border-blue-200 transition">Malayalam PDF · ₹151</button>
+              <button type="button" data-quick-buy="English PDF" class="quick-buy-pill px-3 py-1 rounded-full bg-red-50 hover:bg-red-100 text-red-900 font-bold border border-red-200 transition">English PDF · ₹151</button>
+              <button type="button" data-quick-buy="Hindi PDF" class="quick-buy-pill px-3 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-900 font-bold border border-emerald-200 transition">Hindi PDF · ₹151</button>
+            </div>
+          </div>
+
+          <!-- Right Column: Locomotive Visual + 3 Standing Study Material Books + Red Seal -->
+          <div class="lg:col-span-6 relative">
+            <!-- Red Circular Badge (Matching Reference Image) -->
+            <div class="absolute -top-4 left-4 sm:left-10 z-30 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-rrb-red text-white shadow-pill border-4 border-white flex flex-col items-center justify-center text-center p-2 transform -rotate-6">
+              <span class="text-lg sm:text-xl font-black leading-none tracking-tight">RRB</span>
+              <span class="text-[11px] sm:text-xs font-bold leading-tight mt-0.5">Exam Study</span>
+              <span class="text-[10px] font-semibold bg-white/20 px-2 py-0.5 rounded-full mt-1">₹151 / PDF</span>
+            </div>
+
+            <!-- Main Visual Frame with Red Dynamic Curve + Locomotive Photo -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-br from-red-600 via-rrb-red to-rrb-navy">
+              <img
+                src="./assets/hero-locomotive.jpg"
+                alt="RRB Hub Indian Railway Electric Locomotive"
+                class="w-full h-72 sm:h-96 object-cover object-center opacity-95"
+              />
+              <!-- Bottom Gradient Overlay for 3 Standing Books -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+
+              <!-- 3 Standing 3D Product Covers (Malayalam, English, Hindi) Overlapping Bottom Left like Reference -->
+              <div class="relative sm:absolute sm:bottom-4 sm:left-5 z-20 p-4 sm:p-0 flex items-end justify-center sm:justify-start gap-2.5 sm:gap-3">
+                
+                <!-- Mini Book 1: Malayalam (Blue Cover) -->
+                <button type="button" data-quick-buy="Malayalam PDF" class="quick-buy-pill group text-left focus:outline-none transform hover:-translate-y-2 transition-all">
+                  <div class="w-24 sm:w-28 h-36 sm:h-40 rounded-lg bg-gradient-to-b from-blue-700 via-blue-800 to-slate-900 p-2.5 text-white border border-blue-400/40 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="text-[8px] font-bold uppercase tracking-wider text-blue-200">RRB Hub · ML</div>
+                    <div>
+                      <div class="text-xs sm:text-sm font-black leading-tight">RRB</div>
+                      <div class="text-[10px] font-bold text-amber-300 leading-tight">Study Material</div>
+                      <div class="text-[11px] font-extrabold text-white mt-0.5">Malayalam</div>
+                      <div class="text-[9px] text-blue-100">മലയാളം പതിപ്പ്</div>
+                    </div>
+                    <div class="flex items-center justify-between pt-1 border-t border-white/20 text-[10px] font-extrabold">
+                      <span>PDF</span>
+                      <span class="bg-white text-blue-900 px-1.5 py-0.2 rounded">₹151</span>
+                    </div>
+                  </div>
+                </button>
+
+                <!-- Mini Book 2: English (Red Cover - Center Prominent) -->
+                <button type="button" data-quick-buy="English PDF" class="quick-buy-pill group text-left focus:outline-none transform hover:-translate-y-2 transition-all">
+                  <div class="w-28 sm:w-32 h-40 sm:h-44 rounded-lg bg-gradient-to-b from-red-600 via-rrb-red to-red-950 p-3 text-white border border-red-300/50 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="text-[8px] font-bold uppercase tracking-wider text-red-100">RRB Hub · EN</div>
+                    <div>
+                      <div class="text-sm sm:text-base font-black leading-tight">RRB</div>
+                      <div class="text-[11px] font-bold text-amber-300 leading-tight">Study Material</div>
+                      <div class="text-xs font-extrabold text-white mt-0.5">English</div>
+                      <div class="text-[9px] text-red-100">English Edition</div>
+                    </div>
+                    <div class="flex items-center justify-between pt-1 border-t border-white/20 text-[10px] font-extrabold">
+                      <span>PDF</span>
+                      <span class="bg-white text-rrb-red px-1.5 py-0.2 rounded">₹151</span>
+                    </div>
+                  </div>
+                </button>
+
+                <!-- Mini Book 3: Hindi (Green Cover) -->
+                <button type="button" data-quick-buy="Hindi PDF" class="quick-buy-pill group text-left focus:outline-none transform hover:-translate-y-2 transition-all">
+                  <div class="w-24 sm:w-28 h-36 sm:h-40 rounded-lg bg-gradient-to-b from-emerald-600 via-emerald-700 to-emerald-950 p-2.5 text-white border border-emerald-400/40 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="text-[8px] font-bold uppercase tracking-wider text-emerald-200">RRB Hub · HI</div>
+                    <div>
+                      <div class="text-xs sm:text-sm font-black leading-tight">RRB</div>
+                      <div class="text-[10px] font-bold text-amber-300 leading-tight">Study Material</div>
+                      <div class="text-[11px] font-extrabold text-white mt-0.5">Hindi</div>
+                      <div class="text-[9px] text-emerald-100">हिन्दी संस्करण</div>
+                    </div>
+                    <div class="flex items-center justify-between pt-1 border-t border-white/20 text-[10px] font-extrabold">
+                      <span>PDF</span>
+                      <span class="bg-white text-emerald-900 px-1.5 py-0.2 rounded">₹151</span>
+                    </div>
+                  </div>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FLOATING 4-PILLAR FEATURE BAR (MATCHING REFERENCE IMAGE CARD STYLE, ONLY REAL FEATURES) -->
+        <div class="mt-10 lg:mt-12 bg-white rounded-3xl shadow-card border border-gray-100 p-6 sm:p-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y sm:divide-y-0 lg:divide-x divide-gray-200">
+            
+            <!-- Pillar 1 -->
+            <div class="flex flex-col items-center text-center px-3 pt-2 sm:pt-0">
+              <div class="w-12 h-12 rounded-2xl bg-red-50 text-rrb-red flex items-center justify-center mb-3 shadow-sm">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </div>
+              <h2 class="text-base font-extrabold text-rrb-navy">Complete Study Materials</h2>
+              <p class="text-xs font-medium text-gray-500 mt-1">Structured Topic-Wise PDF Notes</p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="flex flex-col items-center text-center px-3 pt-4 sm:pt-0">
+              <div class="w-12 h-12 rounded-2xl bg-red-50 text-rrb-red flex items-center justify-center mb-3 shadow-sm">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <h2 class="text-base font-extrabold text-rrb-navy">Exam Focused Content</h2>
+              <p class="text-xs font-medium text-gray-500 mt-1">Clear Revision for RRB Exams</p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="flex flex-col items-center text-center px-3 pt-4 sm:pt-0">
+              <div class="w-12 h-12 rounded-2xl bg-red-50 text-rrb-red flex items-center justify-center mb-3 shadow-sm">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/>
+                </svg>
+              </div>
+              <h2 class="text-base font-extrabold text-rrb-navy">Multi-Language Editions</h2>
+              <p class="text-xs font-medium text-gray-500 mt-1">Malayalam | English | Hindi</p>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="flex flex-col items-center text-center px-3 pt-4 sm:pt-0">
+              <div class="w-12 h-12 rounded-2xl bg-red-50 text-rrb-red flex items-center justify-center mb-3 shadow-sm">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <h2 class="text-base font-extrabold text-rrb-navy">Secure Payment &amp; Email Delivery</h2>
+              <p class="text-xs font-medium text-gray-500 mt-1">Razorpay Verified · Sent via Email</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- C & D. STUDY MATERIALS SECTION + ABOUT RRB HUB (INSPIRED BY REFERENCE SPLIT & FULL LAYOUT) -->
+    <section id="studyMaterialsSection" class="py-12 lg:py-16 bg-gray-50/60 border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- LEFT / MAIN COLUMN (7 COLS): OUR STUDY MATERIALS (3 PRODUCT CARDS) -->
+          <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-gray-100 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="inline-block bg-rrb-red text-white text-xs sm:text-sm font-extrabold px-4 py-1.5 rounded-full shadow-sm">
+                  Our Study Materials
+                </span>
+                <span id="activeLangFilterLabel" class="text-xs font-bold text-rrb-red flex items-center gap-1">
+                  <span>One Language Per Order · Fixed ₹151</span>
+                </span>
+              </div>
+
+              <h2 class="text-2xl sm:text-3xl font-black text-rrb-navy tracking-tight">
+                RRB Study Materials for Your <span class="text-rrb-red">Success</span>
+              </h2>
+              <p class="text-sm text-gray-600 mt-1.5 mb-6">
+                Choose the language edition you read best — Malayalam, English or Hindi. Each order is for a single language PDF at <strong>₹151</strong>.
+              </p>
+
+              <!-- 3 PRODUCT CARDS GRID (DYNAMICALLY RENDERED OR FILTERED) -->
+              <div id="productCardsGrid" class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                <!-- Populated by JS renderProducts() -->
+              </div>
+            </div>
+
+            <!-- Transparent Purchase Note from Existing RRB Hub -->
+            <div class="mt-6 pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-500">
+              <span>Prices are in Indian Rupees (₹151 INR) with no hidden fees or recurring subscriptions.</span>
+              <span class="font-bold text-rrb-navy">Payment Partner: Razorpay</span>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN (5 COLS): ABOUT RRB HUB (AUTHENTIC BUSINESS INFO, NO FAKE CLAIMS) -->
+          <div id="aboutSection" class="lg:col-span-5 bg-gradient-to-br from-red-50/80 via-white to-red-50/40 rounded-3xl p-6 sm:p-8 shadow-card border border-red-100 flex flex-col justify-between relative overflow-hidden">
+            <div class="relative z-10">
+              <span class="inline-block bg-rrb-red text-white text-xs sm:text-sm font-extrabold px-4 py-1.5 rounded-full shadow-sm mb-3">
+                About RRB Hub
+              </span>
+
+              <h2 class="text-2xl sm:text-3xl font-black text-rrb-navy tracking-tight leading-snug">
+                Your Focused <br />
+                <span class="text-rrb-red">RRB Study Platform</span>
+              </h2>
+
+              <p class="text-sm text-gray-700 leading-relaxed mt-3">
+                RRB Hub is dedicated to providing clear, organised study materials for Railway Recruitment examinations in three languages — <strong>Malayalam</strong>, <strong>English</strong>, and <strong>Hindi</strong>.
+              </p>
+              <p class="text-xs text-gray-600 leading-relaxed mt-2">
+                Whether you think and revise best in your mother tongue or plan to attempt the examination in English or Hindi, each language edition is arranged topic by topic for steady daily revision.
+              </p>
+
+              <!-- Honest Business Highlights (Strictly Grounded in Existing Website) -->
+              <ul class="space-y-3 mt-5">
+                <li class="flex items-start gap-2.5 text-sm font-bold text-rrb-navy">
+                  <span class="w-5 h-5 rounded-full bg-rrb-red text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span>Clear, Organised Topic-by-Topic Notes</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm font-bold text-rrb-navy">
+                  <span class="w-5 h-5 rounded-full bg-rrb-red text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span>Easy to Understand in Malayalam, English &amp; Hindi</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm font-bold text-rrb-navy">
+                  <span class="w-5 h-5 rounded-full bg-rrb-red text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span>Transparent ₹151 Price Per Language Edition</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm font-bold text-rrb-navy">
+                  <span class="w-5 h-5 rounded-full bg-rrb-red text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span>Personal Email Delivery After Payment Verification</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Bottom Action & Direct Support Box inside About Card -->
+            <div class="relative z-10 mt-6 pt-5 border-t border-red-200/60 flex flex-wrap items-center justify-between gap-3">
+              <button type="button" id="aboutExploreBtn" class="bg-rrb-red hover:bg-rrb-redDark text-white font-bold text-sm px-6 py-3 rounded-full shadow-pill flex items-center gap-2 transition-all">
+                <span>Choose Your Language</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+              <div class="text-xs text-gray-600">
+                <div class="font-bold text-rrb-navy">Direct Support Inbox</div>
+                <a href="mailto:rrbhub@gmail.com" class="text-rrb-red font-semibold underline">rrbhub@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- TRANSPARENT PURCHASE & MANUAL DELIVERY WORKFLOW STRIP (REPLACES FAKE 100,000+ STATS BAR WITH REAL FACTS) -->
+        <div id="howBuyingWorksSection" class="mt-10 bg-red-50/90 rounded-3xl p-6 sm:p-8 border border-red-200/80 shadow-sm">
+          <div class="text-center max-w-2xl mx-auto mb-6">
+            <span class="inline-block bg-rrb-red text-white text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider">How Buying Works — Four Short Stops</span>
+            <h3 class="text-xl sm:text-2xl font-black text-rrb-navy mt-2">Simple, Verified Purchase &amp; Manual Email Delivery</h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 divide-y sm:divide-y-0 lg:divide-x divide-red-200">
+            <div class="flex items-start gap-3.5 pt-3 sm:pt-0 px-2">
+              <div class="w-11 h-11 rounded-2xl bg-rrb-red text-white font-black text-lg flex items-center justify-center flex-shrink-0 shadow-sm">1</div>
+              <div>
+                <div class="text-base font-extrabold text-rrb-navy">3 Languages</div>
+                <p class="text-xs text-gray-700 mt-0.5">Pick Malayalam PDF, English PDF, or Hindi PDF. One language per order.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5 pt-3 sm:pt-0 lg:pl-5 px-2">
+              <div class="w-11 h-11 rounded-2xl bg-rrb-red text-white font-black text-lg flex items-center justify-center flex-shrink-0 shadow-sm">2</div>
+              <div>
+                <div class="text-base font-extrabold text-rrb-navy">₹151 Fixed Price</div>
+                <p class="text-xs text-gray-700 mt-0.5">Enter your Full Name, Email Address, and 10-digit Mobile Number at checkout.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5 pt-3 sm:pt-0 lg:pl-5 px-2">
+              <div class="w-11 h-11 rounded-2xl bg-rrb-red text-white font-black text-lg flex items-center justify-center flex-shrink-0 shadow-sm">3</div>
+              <div>
+                <div class="text-base font-extrabold text-rrb-navy">Razorpay Verified</div>
+                <p class="text-xs text-gray-700 mt-0.5">Pay securely via UPI, Cards, or NetBanking with server-side signature verification.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5 pt-3 sm:pt-0 lg:pl-5 px-2">
+              <div class="w-11 h-11 rounded-2xl bg-rrb-red text-white font-black text-lg flex items-center justify-center flex-shrink-0 shadow-sm">4</div>
+              <div>
+                <div class="text-base font-extrabold text-rrb-navy">Email Delivery</div>
+                <p class="text-xs text-gray-700 mt-0.5">Once verified as PAID, our administrator manually emails your study material to your registered email.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ SECTION (PRESERVING ALL 5 AUTHENTIC QUESTIONS FROM EXISTING WEBSITE) -->
+    <section id="faqSection" class="py-12 lg:py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <span class="inline-block bg-rrb-red text-white text-xs sm:text-sm font-extrabold px-4 py-1.5 rounded-full shadow-sm">
+            Questions Before You Buy
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-black text-rrb-navy mt-3">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-sm text-gray-600 mt-2">
+            Have another question? Write directly to <a href="mailto:rrbhub@gmail.com" class="text-rrb-red font-bold underline">rrbhub@gmail.com</a>
+          </p>
+        </div>
+
+        <div id="faqAccordionContainer" class="space-y-3.5">
+          <!-- Populated by JS renderFaqs() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & POLICY QUICK CARDS SECTION -->
+    <section id="contactSection" class="py-10 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Contact Us Card -->
+          <div class="bg-white rounded-2xl p-6 shadow-card border border-gray-100">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-rrb-red flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-rrb-navy">Contact &amp; Order Support</h3>
+            <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+              For order help, payment queries, or questions, email <a href="mailto:rrbhub@gmail.com" class="text-rrb-red font-bold underline">rrbhub@gmail.com</a>. Include your Order ID or Razorpay Payment ID if you have one. We usually reply within one working day.
+            </p>
+          </div>
+
+          <!-- Independent Seller Notice -->
+          <div class="bg-white rounded-2xl p-6 shadow-card border border-gray-100">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-rrb-red flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-rrb-navy">Independent Study Publisher</h3>
+            <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+              RRB Hub (RRB Study Hub) is an independent study-material seller. We are not affiliated with Indian Railways or any Railway Recruitment Board (RRB).
+            </p>
+          </div>
+
+          <!-- Store Policies Card -->
+          <div class="bg-white rounded-2xl p-6 shadow-card border border-gray-100">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-rrb-red flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-rrb-navy">Official Store Policies</h3>
+            <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+              Review our preserved store policies regarding customer data privacy, personal study usage, and duplicate-charge refund protection:
+            </p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <button type="button" data-policy="privacy" class="policy-open-btn text-xs font-bold text-rrb-red bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition">Privacy Policy</button>
+              <button type="button" data-policy="terms" class="policy-open-btn text-xs font-bold text-rrb-red bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition">Terms &amp; Conditions</button>
+              <button type="button" data-policy="refund" class="policy-open-btn text-xs font-bold text-rrb-red bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition">Refund Policy</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM RED WAVE CTA BANNER (MATCHING REFERENCE IMAGE BOTTOM BANNER) -->
+    <section class="red-wave-bg text-white py-10 sm:py-12 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4 sm:gap-5">
+          <div class="w-16 h-16 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center flex-shrink-0 shadow-lg">
+            <!-- Trophy SVG matching Reference Bottom Banner -->
+            <svg class="w-10 h-10 text-amber-300" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18 2H6v2H2v5c0 2.76 2.24 5 5 5 .46 0 .9-.08 1.32-.21A5.98 5.98 0 0011 16.9V19H7v2h10v-2h-4v-2.1a5.98 5.98 0 002.68-3.11c.42.13.86.21 1.32.21 2.76 0 5-2.24 5-5V4h-4V2zM4 9V6h2v5.83C4.84 11.4 4 10.3 4 9zm16 0c0 1.3-.84 2.4-2 2.83V6h2v3z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Let’s Crack RRB Together!</h2>
+            <p class="text-sm sm:text-base text-red-100 font-medium mt-0.5">Choose Malayalam, English, or Hindi study material for ₹151.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button type="button" id="bottomBannerCtaBtn" class="bg-white hover:bg-gray-100 text-rrb-navy font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-xl flex items-center gap-2.5 transition-transform transform hover:-translate-y-0.5">
+            <span>Get Started</span>
+            <svg class="w-4 h-4 text-rrb-red" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Decorative High-Speed Train Vector Silhouette on Right Side (Matching Reference Image) -->
+      <svg class="hidden lg:block absolute right-0 bottom-0 h-28 w-80 text-white/15 pointer-events-none" viewBox="0 0 400 120" fill="currentColor">
+        <path d="M400 20L120 55C70 62 30 85 10 110H400V20Z" />
+        <rect x="140" y="62" width="35" height="18" rx="3" fill="#ED1010" opacity="0.6"/>
+        <rect x="190" y="56" width="35" height="20" rx="3" fill="#ED1010" opacity="0.6"/>
+        <rect x="240" y="50" width="35" height="22" rx="3" fill="#ED1010" opacity="0.6"/>
+        <rect x="290" y="44" width="35" height="24" rx="3" fill="#ED1010" opacity="0.6"/>
+      </svg>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 2: PROTECTED ADMIN DASHBOARD (ORDERS, MANUAL PDF DELIVERY, CONFIG)-->
+  <!-- ===================================================================== -->
+  <section id="adminDashboardView" class="hidden min-h-screen bg-gray-50 py-8 sm:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Admin Top Header -->
+      <div class="bg-white rounded-3xl p-6 shadow-card border border-gray-200 flex flex-wrap items-center justify-between gap-4 mb-6">
+        <div class="flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-2xl bg-rrb-navy text-white flex items-center justify-center font-black">
+            <svg class="w-6 h-6 text-rrb-red" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-xl sm:text-2xl font-black text-rrb-navy">RRB Hub — Administrator Dashboard</h1>
+              <span id="adminAuthStatusBadge" class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-red-100 text-rrb-red">Supabase Auth Required</span>
+            </div>
+            <p class="text-xs text-gray-500 mt-0.5">
+              Supabase Project: <code class="font-mono text-gray-700">dujgqwzxxmpdsikhkhbk.supabase.co</code> · Connected to <code class="font-mono">admin-orders</code>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button type="button" id="adminBackToStoreBtn" class="px-4 py-2 rounded-xl border border-gray-300 bg-white hover:bg-gray-50 text-xs font-bold text-rrb-navy">
+            ← Back to Storefront
+          </button>
+          <button type="button" id="adminSyncSupabaseBtn" class="px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold flex items-center gap-1.5">
+            <span>↻ Refresh Orders from Supabase</span>
+          </button>
+          <button type="button" id="adminExportCsvBtn" class="px-4 py-2 rounded-xl bg-rrb-navy hover:bg-gray-800 text-white text-xs font-bold flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Export Paid Orders CSV</span>
+          </button>
+          <button type="button" id="adminLockBtn" class="px-3.5 py-2 rounded-xl bg-red-50 hover:bg-red-100 text-rrb-red text-xs font-bold">
+            Sign Out / Lock Admin
+          </button>
+        </div>
+      </div>
+
+      <!-- ADMIN AUTHENTICATION GATE (LOCKED BY DEFAULT — PROTECTED BY SUPABASE AUTH & SERVER ADMIN_EMAIL ALLOWLIST) -->
+      <div id="adminLoginGate" class="max-w-lg mx-auto bg-white rounded-3xl p-8 shadow-card border border-gray-200 my-8 space-y-6">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-red-50 text-rrb-red flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h2 class="text-xl font-black text-rrb-navy">Administrator Sign In (Supabase Auth)</h2>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+            Protected by Supabase Auth and verified server-side against the <code class="font-mono">ADMIN_EMAIL</code> allowlist on <code class="font-mono">admin-orders</code>.
+          </p>
+        </div>
+
+        <form id="adminLoginForm" class="space-y-4">
+          <div>
+            <label for="adminEmailInput" class="block text-xs font-bold text-gray-700 mb-1">Administrator Email (Must match server ADMIN_EMAIL)</label>
+            <input id="adminEmailInput" type="email" placeholder="Enter your Supabase Admin email" required class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:border-rrb-red focus:outline-none" />
+          </div>
+          <div>
+            <label for="adminPasswordInput" class="block text-xs font-bold text-gray-700 mb-1">Supabase Auth Password</label>
+            <input id="adminPasswordInput" type="password" placeholder="Enter your Supabase Auth password" required class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:border-rrb-red focus:outline-none" />
+          </div>
+          <div id="adminLoginError" class="hidden text-xs font-bold text-red-600 bg-red-50 p-3 rounded-xl border border-red-200"></div>
+          <button type="submit" id="adminLoginSubmitBtn" class="w-full bg-rrb-red hover:bg-rrb-redDark text-white font-extrabold text-sm py-3 rounded-xl shadow-sm transition">
+            Sign In with Supabase Auth
+          </button>
+        </form>
+
+        <!-- Public Publishable Key Setup Accordion (Safe — Publishable Keys Only, No Customer Data Shown) -->
+        <div class="pt-4 border-t border-gray-200 space-y-3">
+          <div class="text-xs font-extrabold text-rrb-navy">Public Frontend Connection Keys (Publishable Only)</div>
+          <p class="text-[11px] text-gray-500">
+            If <code class="font-mono">VITE_SUPABASE_ANON_KEY</code> is not set in environment variables yet, paste your publishable key below so Supabase Auth and Checkout can connect to <code class="font-mono">dujgqwzxxmpdsikhkhbk.supabase.co</code>. Never paste secret keys here.
+          </p>
+          <div class="space-y-2.5">
+            <input id="gateSupabaseAnonKey" type="text" value="sb_publishable_feb6_kXW2mlweliMCv73Rg_6NdCVwIe" placeholder="Publishable VITE_SUPABASE_ANON_KEY" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs font-mono" />
+            <input id="gateRazorpayKeyId" type="text" value="rzp_live_U1gSJ0k5nhc192" placeholder="Publishable VITE_RAZORPAY_KEY_ID" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs font-mono" />
+            <div class="flex items-center justify-between">
+              <button type="button" id="saveGatePublicConfigBtn" class="px-4 py-2 rounded-xl bg-rrb-navy hover:bg-gray-800 text-white text-xs font-bold">
+                Save Publishable Keys
+              </button>
+              <span id="gateCfgFeedback" class="hidden text-xs font-bold text-emerald-700">Saved!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADMIN UNLOCKED WORKSPACE (HIDDEN UNTIL SUPABASE AUTH & ADMIN_EMAIL ALLOWLIST SUCCEED) -->
+      <div id="adminUnlockedWorkspace" class="hidden space-y-6">
+
+        <!-- KPI Metrics Row (Strictly Computed from PAID Verified Orders) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-white rounded-2xl p-5 shadow-card border border-gray-100">
+            <div class="text-xs font-bold text-gray-500 uppercase">Verified PAID Orders</div>
+            <div id="kpiPaidCount" class="text-3xl font-black text-emerald-700 mt-1">0</div>
+            <div class="text-[11px] text-gray-500 mt-1">Signature verified via Razorpay</div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow-card border border-amber-200 bg-amber-50/30">
+            <div class="text-xs font-bold text-amber-800 uppercase">Awaiting Manual Email Delivery</div>
+            <div id="kpiPendingDeliveryCount" class="text-3xl font-black text-amber-600 mt-1">0</div>
+            <div class="text-[11px] text-amber-800 mt-1">Paid orders ready for you to email PDF</div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow-card border border-gray-100">
+            <div class="text-xs font-bold text-gray-500 uppercase">Manually Emailed by Admin</div>
+            <div id="kpiDeliveredCount" class="text-3xl font-black text-rrb-navy mt-1">0</div>
+            <div class="text-[11px] text-gray-500 mt-1">Completed manual email deliveries</div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow-card border border-gray-100">
+            <div class="text-xs font-bold text-gray-500 uppercase">Verified Revenue (INR)</div>
+            <div id="kpiTotalRevenue" class="text-3xl font-black text-rrb-red mt-1">₹0</div>
+            <div class="text-[11px] text-gray-500 mt-1">Unpaid/failed attempts excluded</div>
+          </div>
+        </div>
+
+        <!-- Admin Navigation Tabs -->
+        <div class="flex flex-wrap gap-2 border-b border-gray-200 pb-3">
+          <button type="button" data-admin-tab="orders" class="admin-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold bg-rrb-red text-white shadow-sm">
+            1. Customer Orders &amp; Manual PDF Delivery
+          </button>
+          <button type="button" data-admin-tab="products" class="admin-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-rrb-navy border border-gray-200 hover:bg-gray-50">
+            2. Study Materials &amp; Pricing (₹151)
+          </button>
+          <button type="button" data-admin-tab="backend" class="admin-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-rrb-navy border border-gray-200 hover:bg-gray-50">
+            3. Existing Supabase &amp; Razorpay Integration
+          </button>
+        </div>
+
+        <!-- TAB 1: ORDERS & MANUAL PDF DELIVERY WORKFLOW -->
+        <div id="adminTabOrders" class="bg-white rounded-3xl p-6 shadow-card border border-gray-200 space-y-5">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-lg font-black text-rrb-navy">Customer Orders &amp; Manual Email Delivery Queue</h2>
+              <p class="text-xs text-gray-600">
+                Only orders with <span class="font-bold text-emerald-700">Payment Status = PAID (Verified)</span> are eligible for manual PDF email delivery. Unpaid, failed, or cancelled orders are blocked from delivery.
+              </p>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap items-center gap-2.5">
+              <input id="adminOrderSearch" type="text" placeholder="Search name, email, mobile, ID..." class="px-3.5 py-2 rounded-xl border border-gray-300 text-xs focus:border-rrb-red focus:outline-none w-56" />
+              <select id="adminPaymentFilter" class="px-3 py-2 rounded-xl border border-gray-300 text-xs font-bold text-rrb-navy bg-white">
+                <option value="PAID">Show PAID (Verified) Only</option>
+                <option value="AWAITING_DELIVERY">PAID — Awaiting Manual PDF Email</option>
+                <option value="DELIVERED">PAID — Manually Emailed</option>
+                <option value="UNPAID">Failed / Cancelled (Do Not Deliver)</option>
+                <option value="ALL">All Records</option>
+              </select>
+              <select id="adminLanguageFilter" class="px-3 py-2 rounded-xl border border-gray-300 text-xs font-bold text-rrb-navy bg-white">
+                <option value="ALL">All Languages</option>
+                <option value="Malayalam PDF">Malayalam PDF</option>
+                <option value="English PDF">English PDF</option>
+                <option value="Hindi PDF">Hindi PDF</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Orders Table -->
+          <div class="overflow-x-auto border border-gray-200 rounded-2xl">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-gray-100 text-[11px] font-extrabold text-gray-600 uppercase tracking-wider border-b border-gray-200">
+                  <th class="py-3.5 px-4">Order Date &amp; IDs</th>
+                  <th class="py-3.5 px-4">Customer Details</th>
+                  <th class="py-3.5 px-4">Purchased PDF &amp; Price</th>
+                  <th class="py-3.5 px-4">Payment Verification</th>
+                  <th class="py-3.5 px-4">Manual PDF Delivery Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminOrdersTableBody" class="divide-y divide-gray-200 text-xs">
+                <!-- Populated by JS renderAdminOrders() -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 2: STUDY MATERIALS & PRICING -->
+        <div id="adminTabProducts" class="hidden bg-white rounded-3xl p-6 shadow-card border border-gray-200 space-y-5">
+          <div>
+            <h2 class="text-lg font-black text-rrb-navy">Configured Study Material Products (`public."Telegram"` &amp; Store Catalog)</h2>
+            <p class="text-xs text-gray-600 mt-0.5">
+              Preserves the exact 3 language editions and ₹151 (`15100` paise) pricing from your existing RRB Hub.
+            </p>
+          </div>
+          <div id="adminProductCatalogList" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- TAB 3: SUPABASE & RAZORPAY INTEGRATION CONFIG -->
+        <div id="adminTabBackend" class="hidden bg-white rounded-3xl p-6 shadow-card border border-gray-200 space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <!-- Left: Live Connection Config -->
+            <div class="space-y-4">
+              <h2 class="text-lg font-black text-rrb-navy">Existing Supabase &amp; Razorpay Configuration</h2>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Your redesigned frontend connects to your existing Supabase project (<code class="font-mono">dujgqwzxxmpdsikhkhbk</code>). Secret keys (<code class="font-mono">RAZORPAY_KEY_SECRET</code>, <code class="font-mono">SUPABASE_SERVICE_ROLE_KEY</code>) are strictly kept on the server in Supabase Edge Function Secrets and never placed in browser code.
+              </p>
+
+              <div class="space-y-3 bg-gray-50 p-4 rounded-2xl border border-gray-200">
+                <div>
+                  <label for="cfgSupabaseUrl" class="block text-xs font-bold text-rrb-navy mb-1">VITE_SUPABASE_URL (Existing Project)</label>
+                  <input id="cfgSupabaseUrl" type="url" value="https://dujgqwzxxmpdsikhkhbk.supabase.co" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs font-mono bg-white" />
+                </div>
+                <div>
+                  <label for="cfgSupabaseAnonKey" class="block text-xs font-bold text-rrb-navy mb-1">VITE_SUPABASE_ANON_KEY (Publishable Key Only)</label>
+                  <input id="cfgSupabaseAnonKey" type="text" value="sb_publishable_feb6_kXW2mlweliMCv73Rg_6NdCVwIe" placeholder="sb_publishable_..." class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs font-mono bg-white" />
+                </div>
+                <div>
+                  <label for="cfgRazorpayKeyId" class="block text-xs font-bold text-rrb-navy mb-1">VITE_RAZORPAY_KEY_ID (Publishable Live Key ID Only)</label>
+                  <input id="cfgRazorpayKeyId" type="text" value="rzp_live_U1gSJ0k5nhc192" placeholder="rzp_live_U1gSJ0k5nhc192" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs font-mono bg-white" />
+                </div>
+                <div class="flex items-center justify-between pt-2">
+                  <button type="button" id="savePublicConfigBtn" class="bg-rrb-red hover:bg-rrb-redDark text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-sm">
+                    Save Public Frontend Config
+                  </button>
+                  <span id="cfgSaveFeedback" class="text-xs font-bold text-emerald-700 hidden">Saved!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Preserved Database & Edge Function Contract -->
+            <div class="space-y-4">
+              <h3 class="text-base font-black text-rrb-navy">Preserved Supabase Schema &amp; Edge Functions</h3>
+              <div class="bg-rrb-navy text-gray-100 rounded-2xl p-4 text-xs font-mono space-y-2 overflow-x-auto">
+                <div class="text-amber-300 font-bold">// 1. Existing Webhook (Preserved)</div>
+                <div>POST https://dujgqwzxxmpdsikhkhbk.supabase.co/functions/v1/razorpay-webhook</div>
+                <div class="text-amber-300 font-bold pt-2">// 2. Order Creation &amp; Verification Endpoints</div>
+                <div>POST https://dujgqwzxxmpdsikhkhbk.supabase.co/functions/v1/create-razorpay-order</div>
+                <div>POST https://dujgqwzxxmpdsikhkhbk.supabase.co/functions/v1/payment-status</div>
+                <div class="text-amber-300 font-bold pt-2">// 3. Preserved Table: public."Payment"</div>
+                <div>Columns: "Email", "Plan", "Status", "Links", "Full Name", "Mobile Number", razorpay_payment_id, razorpay_order_id, amount_paise (15100), currency ('INR'), verified_at</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-red-50 border border-red-200 text-xs text-gray-700 space-y-1">
+                <div class="font-extrabold text-rrb-red">Security Check: Active</div>
+                <p>• Zero <code class="font-mono">RAZORPAY_KEY_SECRET</code> or <code class="font-mono">service_role</code> keys in frontend code.</p>
+                <p>• Browser callback alone never marks an order as PAID; server signature verification is required.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- COMPLETE CHECKOUT & PAYMENT WORKFLOW MODAL (STEPS 1 TO 6)             -->
+  <!-- ===================================================================== -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-gray-200 overflow-hidden my-auto">
+      
+      <!-- Modal Top Bar -->
+      <div class="bg-rrb-navy text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-rrb-red flex items-center justify-center font-black text-sm">₹</span>
+          <div>
+            <h3 class="text-base font-extrabold leading-none">RRB Hub — Secure Study Material Checkout</h3>
+            <p class="text-[11px] text-gray-300 mt-1">One Language Edition · Verified Razorpay Payment · Manual Email Delivery</p>
+          </div>
+        </div>
+        <button type="button" id="closeCheckoutModalBtn" class="text-gray-300 hover:text-white p-1.5 rounded-lg" aria-label="Close Checkout">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- STEP A: CUSTOMER INFORMATION & PRODUCT SUMMARY FORM -->
+      <div id="checkoutStepForm" class="p-6 sm:p-7 space-y-5">
+        
+        <!-- Selected Product Summary Banner -->
+        <div class="bg-red-50/80 border border-red-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <div id="checkoutBookBadge" class="w-12 h-16 rounded-lg bg-rrb-red text-white font-black text-xs flex flex-col items-center justify-center shadow-sm flex-shrink-0">
+              <span>RRB</span>
+              <span id="checkoutBookCode" class="text-[10px] bg-white/20 px-1.5 rounded mt-0.5">ML</span>
+            </div>
+            <div>
+              <div class="text-[11px] font-extrabold uppercase tracking-wider text-rrb-red">Selected Study Material</div>
+              <div id="checkoutProductName" class="text-lg font-black text-rrb-navy">Malayalam PDF</div>
+              <div id="checkoutProductLang" class="text-xs font-semibold text-gray-600">Language: Malayalam (മലയാളം) · Single Language Edition</div>
+            </div>
+          </div>
+          <div class="sm:text-right border-t sm:border-t-0 pt-2 sm:pt-0 border-red-200">
+            <div class="text-xs font-semibold text-gray-500">Total Payable</div>
+            <div id="checkoutProductPrice" class="text-2xl font-black text-rrb-red">₹151</div>
+            <div class="text-[10px] font-semibold text-gray-500">Inclusive of all taxes</div>
+          </div>
+        </div>
+
+        <!-- Switch Language Pill Selector Inside Checkout -->
+        <div>
+          <label class="block text-xs font-extrabold text-rrb-navy uppercase tracking-wider mb-2">1. Confirm or Change Language Edition *</label>
+          <div class="grid grid-cols-3 gap-2.5" id="checkoutLanguageSelector">
+            <button type="button" data-select-plan="Malayalam PDF" class="checkout-lang-btn py-2.5 px-3 rounded-xl border-2 text-xs font-extrabold transition text-center">
+              Malayalam PDF (₹151)
+            </button>
+            <button type="button" data-select-plan="English PDF" class="checkout-lang-btn py-2.5 px-3 rounded-xl border-2 text-xs font-extrabold transition text-center">
+              English PDF (₹151)
+            </button>
+            <button type="button" data-select-plan="Hindi PDF" class="checkout-lang-btn py-2.5 px-3 rounded-xl border-2 text-xs font-extrabold transition text-center">
+              Hindi PDF (₹151)
+            </button>
+          </div>
+        </div>
+
+        <!-- Customer Information Form -->
+        <form id="customerCheckoutForm" class="space-y-4" novalidate>
+          <div>
+            <label for="custFullName" class="block text-xs font-bold text-rrb-navy mb-1">2. Customer Full Name *</label>
+            <input id="custFullName" type="text" required placeholder="Enter your full name (e.g. Aswanth B)" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:border-rrb-red focus:outline-none" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="custEmail" class="block text-xs font-bold text-rrb-navy mb-1">3. Registered Email Address * <span class="text-rrb-red font-semibold">(For PDF Delivery)</span></label>
+              <input id="custEmail" type="email" required placeholder="you@example.com" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:border-rrb-red focus:outline-none" />
+            </div>
+            <div>
+              <label for="custMobile" class="block text-xs font-bold text-rrb-navy mb-1">4. Mobile Number (10-digit Indian) *</label>
+              <div class="flex">
+                <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-gray-300 bg-gray-100 text-gray-600 text-xs font-bold">+91</span>
+                <input id="custMobile" type="tel" maxlength="10" required placeholder="9876543210" class="w-full px-3.5 py-2.5 rounded-r-xl border border-gray-300 text-sm focus:border-rrb-red focus:outline-none" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Validation Error Box -->
+          <div id="checkoutFormError" class="hidden p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-rrb-red"></div>
+
+          <!-- Manual Email Delivery Notice -->
+          <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-200 text-xs text-gray-700 flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-rrb-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div>
+              <span class="font-bold text-rrb-navy">Manual Email Delivery:</span> After your Razorpay payment of <strong>₹151</strong> is verified, our administrator will manually send your purchased study material to the email address entered above.
+            </div>
+          </div>
+
+          <!-- Primary Pay Now Button -->
+          <div class="pt-1 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span class="text-[11px] text-gray-500">By clicking Pay Now, you agree to our Terms &amp; Refund Policy.</span>
+            <button type="submit" id="payNowSubmitBtn" class="w-full sm:w-auto bg-rrb-red hover:bg-rrb-redDark text-white font-extrabold text-sm px-8 py-3.5 rounded-full shadow-pill flex items-center justify-center gap-2 transition-all">
+              <span>Pay Now · ₹151</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP B: RAZORPAY GATEWAY & BACKEND SIGNATURE VERIFICATION STEP (NO CUSTOMER SIMULATION BUTTONS) -->
+      <div id="checkoutStepGateway" class="hidden p-6 sm:p-7 space-y-5">
+        <div class="p-4 rounded-2xl bg-gray-900 text-white flex items-center justify-between">
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-gray-400 font-bold">Razorpay Order Created via Supabase Edge Function</div>
+            <div id="gatewayOrderIdDisplay" class="text-sm font-mono font-bold text-amber-300 mt-0.5">order_...</div>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-gray-300">Amount</div>
+            <div class="text-xl font-black text-white">₹151.00</div>
+          </div>
+        </div>
+
+        <div id="gatewayLiveNotice" class="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-xs text-blue-950 space-y-1.5">
+          <div id="gatewayStatusHeading" class="font-extrabold text-sm text-blue-900">Ready for Secure Razorpay Payment</div>
+          <p id="gatewayModeDescription">
+            Your order for <strong>₹151.00 INR</strong> (`15100` paise) has been registered with the server. Complete payment in the Razorpay window; your order will be marked as PAID only after server-side webhook and database verification.
+          </p>
+        </div>
+
+        <!-- Live Razorpay Launch & Server Verification Check Buttons -->
+        <div class="space-y-3">
+          <button type="button" id="launchLiveRazorpayBtn" class="w-full bg-rrb-red hover:bg-rrb-redDark text-white font-extrabold text-sm py-3.5 px-5 rounded-2xl shadow-pill flex items-center justify-center gap-2 transition">
+            <span>Proceed to Razorpay Checkout (₹151)</span>
+          </button>
+
+          <button type="button" id="checkServerVerificationBtn" class="hidden w-full bg-rrb-navy hover:bg-gray-800 text-white font-extrabold text-xs py-3 px-5 rounded-2xl shadow-sm flex items-center justify-center gap-2 transition">
+            <span>↻ Re-check Payment Verification Status from Server</span>
+          </button>
+        </div>
+
+        <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+          <button type="button" id="backToFormBtn" class="text-xs font-bold text-gray-600 hover:text-rrb-navy">← Edit Customer Info</button>
+          <span class="text-[11px] text-gray-400">Verified via Supabase Edge Functions &amp; Razorpay Webhook</span>
+        </div>
+      </div>
+
+      <!-- STEP C: STEP 6 — CUSTOMER PAYMENT CONFIRMATION (EXACT MESSAGE FROM PROMPT) -->
+      <div id="checkoutStepSuccess" class="hidden p-6 sm:p-8 space-y-5 text-center">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto shadow-sm">
+          <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+
+        <div class="space-y-2">
+          <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase tracking-wider">Payment Verified · Order Marked PAID</span>
+          <h3 class="text-xl sm:text-2xl font-black text-rrb-navy">
+            Payment Successful! Your order has been received. We will send your purchased study material to your registered email address.
+          </h3>
+        </div>
+
+        <!-- Order Receipt Breakdown -->
+        <div class="bg-gray-50 rounded-2xl p-4 sm:p-5 border border-gray-200 text-left text-xs space-y-2">
+          <div class="flex justify-between py-1 border-b border-gray-200/70">
+            <span class="text-gray-500 font-medium">Customer Name:</span>
+            <span id="receiptCustName" class="font-bold text-rrb-navy"></span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-gray-200/70">
+            <span class="text-gray-500 font-medium">Registered Email (Delivery Address):</span>
+            <span id="receiptCustEmail" class="font-bold text-rrb-red"></span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-gray-200/70">
+            <span class="text-gray-500 font-medium">Mobile Number:</span>
+            <span id="receiptCustMobile" class="font-bold text-rrb-navy"></span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-gray-200/70">
+            <span class="text-gray-500 font-medium">Purchased Study Material:</span>
+            <span id="receiptProductPlan" class="font-extrabold text-rrb-navy"></span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-gray-200/70">
+            <span class="text-gray-500 font-medium">Amount Paid:</span>
+            <span id="receiptAmount" class="font-extrabold text-emerald-700">₹151.00 INR</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-gray-200/70">
+            <span class="text-gray-500 font-medium">Razorpay Order ID:</span>
+            <span id="receiptOrderId" class="font-mono font-bold text-gray-800"></span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-gray-200/70">
+            <span class="text-gray-500 font-medium">Razorpay Payment ID:</span>
+            <span id="receiptPaymentId" class="font-mono font-bold text-gray-800"></span>
+          </div>
+          <div class="flex justify-between py-1">
+            <span class="text-gray-500 font-medium">Order &amp; Delivery Status:</span>
+            <span class="font-extrabold text-emerald-700">PAID · Awaiting Manual Email Delivery by Admin</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button type="button" id="successViewInAdminBtn" class="px-5 py-2.5 rounded-full bg-rrb-navy hover:bg-gray-800 text-white text-xs font-extrabold">
+            View Order in Admin Dashboard →
+          </button>
+          <button type="button" id="successCloseBtn" class="px-6 py-2.5 rounded-full bg-rrb-red hover:bg-rrb-redDark text-white text-xs font-extrabold">
+            Done
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP D: FAILED OR CANCELLED PAYMENT STATE (NEVER MARKED AS PAID) -->
+      <div id="checkoutStepFailed" class="hidden p-6 sm:p-8 space-y-5 text-center">
+        <div class="w-16 h-16 rounded-full bg-red-100 text-rrb-red flex items-center justify-center mx-auto">
+          <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <span id="failedBadgeText" class="inline-block px-3 py-1 rounded-full bg-red-100 text-rrb-red text-xs font-extrabold uppercase">Payment Not Completed</span>
+          <h3 id="failedTitleText" class="text-xl font-black text-rrb-navy mt-2">Payment Failed or Was Cancelled</h3>
+          <p id="failedReasonText" class="text-xs text-gray-600 mt-1 max-w-md mx-auto">
+            This order has NOT been marked as PAID. If any amount was debited, Razorpay automatically reconciles it or you can write to rrbhub@gmail.com with your Order ID.
+          </p>
+        </div>
+        <div class="flex items-center justify-center gap-3">
+          <button type="button" id="retryPaymentBtn" class="bg-rrb-red hover:bg-rrb-redDark text-white font-extrabold text-xs px-6 py-3 rounded-full shadow-sm">
+            Try Payment Again
+          </button>
+          <button type="button" id="closeFailedBtn" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-xs px-5 py-3 rounded-full">
+            Close
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- LEGAL POLICIES MODAL (PRIVACY POLICY, TERMS & CONDITIONS, REFUND)     -->
+  <!-- ===================================================================== -->
+  <div id="policyModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full shadow-2xl border border-gray-200 overflow-hidden">
+      <div class="bg-rrb-navy text-white px-6 py-4 flex items-center justify-between">
+        <h3 id="policyModalTitle" class="text-base font-extrabold">Privacy Policy</h3>
+        <button type="button" id="closePolicyModalBtn" class="text-gray-300 hover:text-white p-1" aria-label="Close Policy">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="policyModalBody" class="p-6 text-sm text-gray-700 space-y-3 leading-relaxed max-h-[70vh] overflow-y-auto">
+        <!-- Populated by JS openPolicyModal() -->
+      </div>
+      <div class="px-6 py-3.5 bg-gray-50 border-t border-gray-200 flex justify-between items-center">
+        <span class="text-xs text-gray-500">Support: <a href="mailto:rrbhub@gmail.com" class="text-rrb-red font-bold underline">rrbhub@gmail.com</a></span>
+        <button type="button" id="closePolicyFooterBtn" class="bg-rrb-navy text-white text-xs font-bold px-5 py-2 rounded-full">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- GEMINI AI STUDY ASSISTANT (CONNECTED TO DEPLOYED EDGE FUNCTION)       -->
+  <!-- ===================================================================== -->
+  <div id="aiAssistantModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-gray-200 overflow-hidden flex flex-col max-h-[82vh]">
+      <div class="bg-rrb-navy text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-xl bg-rrb-red flex items-center justify-center font-black text-xs">AI</span>
+          <div>
+            <h3 class="text-sm sm:text-base font-extrabold leading-none">RRB Hub — AI Study Assistant</h3>
+            <p class="text-[11px] text-gray-300 mt-1">RRB NTPC &amp; Group D Exam Preparation Help · Powered by Server Edge Function</p>
+          </div>
+        </div>
+        <button type="button" id="closeAiAssistantBtn" class="text-gray-300 hover:text-white p-1" aria-label="Close AI Study Assistant">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div id="aiAssistantMessages" class="p-5 space-y-3 overflow-y-auto flex-1 bg-gray-50 text-xs sm:text-sm">
+        <div class="bg-white p-3.5 rounded-2xl border border-gray-200 text-gray-700 shadow-sm">
+          <div class="font-extrabold text-rrb-navy mb-1">Welcome to RRB Hub Study Assistant!</div>
+          Ask any syllabus, exam pattern, or topic question for <strong>RRB NTPC</strong> or <strong>RRB Group D</strong> (in Malayalam, English, or Hindi), or ask about our ₹151 study material PDFs.
+        </div>
+      </div>
+
+      <form id="aiAssistantForm" class="p-4 bg-white border-t border-gray-200 flex items-center gap-2">
+        <input id="aiAssistantInput" type="text" required placeholder="Ask an RRB NTPC / Group D study question..." class="flex-1 px-4 py-2.5 rounded-full border border-gray-300 text-xs sm:text-sm focus:border-rrb-red focus:outline-none" />
+        <button type="submit" id="aiAssistantSendBtn" class="bg-rrb-red hover:bg-rrb-redDark text-white font-extrabold text-xs px-5 py-2.5 rounded-full shadow-sm">
+          Ask
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating AI Study Assistant Launcher Button -->
+  <button type="button" id="openAiAssistantBtn" class="fixed bottom-5 right-5 z-40 bg-rrb-navy hover:bg-gray-800 text-white font-extrabold text-xs px-4 py-3 rounded-full shadow-2xl border-2 border-white flex items-center gap-2 transition-transform transform hover:-translate-y-0.5">
+    <span class="w-2.5 h-2.5 rounded-full bg-rrb-red animate-pulse"></span>
+    <span>RRB AI Study Assistant</span>
+  </button>
+
+  <!-- ===================================================================== -->
+  <!-- E. DARK NAVY FOOTER (MATCHING REFERENCE IMAGE FOOTER)                 -->
+  <!-- ===================================================================== -->
+  <footer class="bg-rrb-navy text-white pt-10 pb-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-gray-800">
+        
+        <!-- Brand Logo in Footer -->
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-rrb-red flex items-center justify-center text-white shadow-md flex-shrink-0">
+            <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 16C16 14 26 16 32 21C38 16 48 14 56 16V48C48 46 38 48 32 53C26 48 16 46 8 48V16Z" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="23" y="13" width="18" height="20" rx="4" fill="white" />
+              <rect x="26" y="16" width="5" height="5" rx="1" fill="#ED1010" />
+              <rect x="33" y="16" width="5" height="5" rx="1" fill="#ED1010" />
+              <path d="M24 35L19 46M40 35L45 46M21 39H43" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-2xl font-extrabold tracking-tight leading-none">
+              <span class="text-white">RRB</span> <span class="text-rrb-red">Hub</span>
+            </div>
+            <p class="text-[11px] text-gray-400 font-medium mt-0.5">Study • Prepare • Succeed</p>
+          </div>
+        </div>
+
+        <!-- Working Footer Navigation Links (Matching Reference Layout) -->
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm font-medium text-gray-300">
+          <button type="button" data-nav="home" class="footer-nav-link hover:text-white transition">Home</button>
+          <span class="text-gray-700">|</span>
+          <button type="button" data-nav="materials" class="footer-nav-link hover:text-white transition">Study Materials</button>
+          <span class="text-gray-700">|</span>
+          <button type="button" data-nav="faq" class="footer-nav-link hover:text-white transition">FAQ</button>
+          <span class="text-gray-700">|</span>
+          <button type="button" data-policy="privacy" class="policy-open-btn hover:text-white transition">Privacy Policy</button>
+          <span class="text-gray-700">|</span>
+          <button type="button" data-policy="terms" class="policy-open-btn hover:text-white transition">Terms &amp; Conditions</button>
+          <span class="text-gray-700">|</span>
+          <button type="button" data-policy="refund" class="policy-open-btn hover:text-white transition">Refund Policy</button>
+          <span class="text-gray-700">|</span>
+          <button type="button" data-nav="contact" class="footer-nav-link hover:text-white transition">Contact</button>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright & Disclaimer Bar -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+        <div>
+          © 2026 RRB Hub (RRB Study Hub). All Rights Reserved. · Independent seller, not affiliated with Indian Railways or any RRB.
+        </div>
+        <div class="flex items-center gap-3">
+          <span>Support: <a href="mailto:rrbhub@gmail.com" class="text-white hover:text-red-400 underline font-semibold">rrbhub@gmail.com</a></span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- APPLICATION JAVASCRIPT (PRODUCTS, CHECKOUT, RAZORPAY, SUPABASE, ADMIN)-->
+  <!-- ===================================================================== -->
+  <script>
+    (function () {
+      // 1. PRESERVED PRODUCT CONFIGURATION (EXACT EXISTING RRB HUB PRODUCTS & ₹151 PRICE)
+      const PRODUCTS = [
+        {
+          id: 'malayalam',
+          planName: 'Malayalam PDF',
+          displayTitle: 'Malayalam PDF',
+          language: 'Malayalam',
+          nativeLabel: 'മലയാളം പതിപ്പ്',
+          code: 'ML',
+          price: 151,
+          amountPaise: 15100,
+          currency: 'INR',
+          coverTheme: 'from-blue-600 via-blue-700 to-blue-950',
+          spineColor: '#1E3A8A',
+          badgeBg: 'bg-blue-700',
+          btnText: 'Buy Now',
+          description: 'Full study notes written in Malayalam for candidates who think and revise best in their mother tongue.'
+        },
+        {
+          id: 'english',
+          planName: 'English PDF',
+          displayTitle: 'English PDF',
+          language: 'English',
+          nativeLabel: 'English Edition',
+          code: 'EN',
+          price: 151,
+          amountPaise: 15100,
+          currency: 'INR',
+          coverTheme: 'from-red-600 via-rrb-red to-red-950',
+          spineColor: '#991B1B',
+          badgeBg: 'bg-rrb-red',
+          btnText: 'Buy Now',
+          description: 'The same coverage in clear, simple English — useful if you plan to attempt the exam in English.'
+        },
+        {
+          id: 'hindi',
+          planName: 'Hindi PDF',
+          displayTitle: 'Hindi PDF',
+          language: 'Hindi',
+          nativeLabel: 'हिन्दी संस्करण',
+          code: 'HI',
+          price: 151,
+          amountPaise: 15100,
+          currency: 'INR',
+          coverTheme: 'from-emerald-600 via-emerald-700 to-emerald-950',
+          spineColor: '#065F46',
+          badgeBg: 'bg-emerald-700',
+          btnText: 'Buy Now',
+          description: 'Complete notes in Hindi, arranged topic by topic for steady daily revision.'
+        }
+      ];
+
+      // 2. PRESERVED FAQ CONTENT FROM https://railwise-study-shelf.lovable.app
+      const FAQS = [
+        {
+          q: 'Can I get all three languages in one order?',
+          a: 'No. Each order is for exactly one language at ₹151. If you need another language, place a separate order.'
+        },
+        {
+          q: 'How do I receive the PDF?',
+          a: 'After your Razorpay payment is verified, the RRB Hub administrator manually sends your purchased study material to your registered email address.'
+        },
+        {
+          q: 'My money was debited but I didn’t get the file.',
+          a: 'Sometimes bank confirmation takes a few minutes. Keep the order confirmation details handy, or email rrbhub@gmail.com with your Order ID or Razorpay Payment ID — we will verify and sort it out promptly.'
+        },
+        {
+          q: 'Is this an official Railway publication?',
+          a: 'No. RRB Hub is an independent study-material seller. We are not connected with Indian Railways or any Railway Recruitment Board (RRB).'
+        },
+        {
+          q: 'Which payment methods work?',
+          a: 'Anything Razorpay supports for your account — UPI (GPay, PhonePe, Paytm), debit/credit cards, net banking, and supported wallets.'
+        }
+      ];
+
+      // 3. PRESERVED POLICY CONTENT FROM https://railwise-study-shelf.lovable.app
+      const POLICIES = {
+        privacy: {
+          title: 'Privacy Policy — RRB Hub',
+          html: `
+            <p><strong>Information We Collect:</strong> We collect your full name, mobile number, and email address only to process your order, deliver your purchased study material PDF, and provide customer support.</p>
+            <p><strong>Payment Security:</strong> Payments are handled securely by Razorpay. We never see or store your card numbers, bank login, or UPI PIN details.</p>
+            <p><strong>Data Protection:</strong> We do not sell or rent your personal information. Your order record is stored securely in our private database with Row Level Security (RLS) enabled.</p>
+            <p><strong>Your Rights:</strong> For any questions or data requests, email <a href="mailto:rrbhub@gmail.com" class="text-rrb-red font-bold underline">rrbhub@gmail.com</a>.</p>
+          `
+        },
+        terms: {
+          title: 'Terms & Conditions — RRB Hub',
+          html: `
+            <p><strong>1. Single Language Per Order:</strong> Each purchase is for one selected language PDF (Malayalam, English, or Hindi) at the configured price of ₹151 INR.</p>
+            <p><strong>2. Personal Study Use Only:</strong> The study material PDF is solely for your personal exam preparation. Please do not resell, redistribute, or upload it publicly.</p>
+            <p><strong>3. Independent Seller Disclaimer:</strong> RRB Hub is an independent educational publisher and is not affiliated with Indian Railways or any Railway Recruitment Board (RRB).</p>
+            <p><strong>4. Manual Email Delivery:</strong> After server-side Razorpay payment verification, our administrator manually emails the purchased study material to your registered email address.</p>
+            <p><strong>5. Support:</strong> Contact <a href="mailto:rrbhub@gmail.com" class="text-rrb-red font-bold underline">rrbhub@gmail.com</a> for assistance.</p>
+          `
+        },
+        refund: {
+          title: 'Refund Policy — RRB Hub',
+          html: `
+            <p><strong>Digital Study Material Policy:</strong> Because our products are digital study materials delivered via email, purchases are generally final once the material has been sent.</p>
+            <p><strong>When We Issue a Full Refund:</strong></p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>You were accidentally charged twice for the same language order.</li>
+              <li>Your payment succeeded and was verified, but we were unable to deliver your purchased study material and could not resolve the issue.</li>
+            </ul>
+            <p>Email <a href="mailto:rrbhub@gmail.com" class="text-rrb-red font-bold underline">rrbhub@gmail.com</a> within 7 days with your Razorpay Payment ID or Order ID. Approved refunds are returned to the original payment method through Razorpay.</p>
+          `
+        }
+      };
+
+      // 4. APPLICATION STATE & OFFICIAL SUPABASE JS CLIENT INTEGRATION
+      const envConfig = window.__RRB_HUB_ENV__ || {};
+      const PLACEHOLDER_TOKENS = new Set([
+        '',
+        'YOUR_SUPABASE_PUBLISHABLE_ANON_KEY_HERE',
+        'YOUR_RAZORPAY_KEY_ID_HERE',
+        'your_supabase_publishable_anon_key_here',
+        'rzp_live_your_publishable_key_id_here'
+      ]);
+
+      function isRealConfiguredValue(val) {
+        const trimmed = String(val || '').trim();
+        return trimmed.length > 8 && !PLACEHOLDER_TOKENS.has(trimmed);
+      }
+
+      const state = {
+        langFilter: 'ALL',
+        selectedPlan: 'Malayalam PDF',
+        isSubmittingOrder: false,
+        isPollingStatus: false,
+        activeDraftOrder: null,
+        lastSubmittedPaymentId: '',
+        adminUnlocked: false,
+        adminUserEmail: '',
+        adminActiveTab: 'orders',
+        supabaseClient: null,
+        publicConfig: {
+          supabaseUrl: envConfig.VITE_SUPABASE_URL || 'https://dujgqwzxxmpdsikhkhbk.supabase.co',
+          supabaseAnonKey: isRealConfiguredValue(envConfig.VITE_SUPABASE_ANON_KEY || envConfig.VITE_SUPABASE_PUBLISHABLE_KEY)
+            ? (envConfig.VITE_SUPABASE_ANON_KEY || envConfig.VITE_SUPABASE_PUBLISHABLE_KEY)
+            : 'sb_publishable_feb6_kXW2mlweliMCv73Rg_6NdCVwIe',
+          razorpayKeyId: isRealConfiguredValue(envConfig.VITE_RAZORPAY_KEY_ID)
+            ? envConfig.VITE_RAZORPAY_KEY_ID
+            : 'rzp_live_U1gSJ0k5nhc192'
+        },
+        // Strictly empty until fetched from Supabase `admin-orders` Edge Function (zero fake/sample orders)
+        orders: []
+      };
+
+      // Load saved public publishable config from localStorage if present
+      try {
+        localStorage.removeItem('rrb_hub_orders_v2'); // Clear any legacy sample preview orders
+        const savedCfg = localStorage.getItem('rrb_hub_public_cfg_v2');
+        if (savedCfg) {
+          const parsedCfg = JSON.parse(savedCfg);
+          if (parsedCfg.supabaseUrl) state.publicConfig.supabaseUrl = parsedCfg.supabaseUrl;
+          if (isRealConfiguredValue(parsedCfg.supabaseAnonKey)) state.publicConfig.supabaseAnonKey = parsedCfg.supabaseAnonKey;
+          if (isRealConfiguredValue(parsedCfg.razorpayKeyId)) state.publicConfig.razorpayKeyId = parsedCfg.razorpayKeyId;
+        }
+      } catch (err) {}
+
+      // Initialize Official Supabase JavaScript Client (@supabase/supabase-js)
+      function getSupabaseClient() {
+        const url = (state.publicConfig.supabaseUrl || 'https://dujgqwzxxmpdsikhkhbk.supabase.co').trim();
+        const key = (state.publicConfig.supabaseAnonKey || '').trim();
+        if (!url || !isRealConfiguredValue(key)) {
+          state.supabaseClient = null;
+          return null;
+        }
+        if (state.supabaseClient && state.supabaseClient._rrbUrl === url && state.supabaseClient._rrbKey === key) {
+          return state.supabaseClient;
+        }
+        if (window.supabase && typeof window.supabase.createClient === 'function') {
+          const client = window.supabase.createClient(url, key, {
+            auth: { persistSession: true, autoRefreshToken: true }
+          });
+          client._rrbUrl = url;
+          client._rrbKey = key;
+          state.supabaseClient = client;
+          return client;
+        }
+        return null;
+      }
+
+      function escapeHtml(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      // Normalize plan names from `public."Payment"` / `public."Telegram"` ("Malayalam pdf", "English Pdf", "Hindi pdf")
+      function normalizePlanRecord(rawPlan) {
+        const lower = String(rawPlan || '').toLowerCase();
+        if (lower.includes('english')) return PRODUCTS[1];
+        if (lower.includes('hindi')) return PRODUCTS[2];
+        return PRODUCTS[0];
+      }
+
+      // Map a row from Supabase `public."Payment"` table into the Admin Dashboard order object
+      // Never exposes `row.Links` (private Telegram links remain server-side)
+      function mapSupabasePaymentRow(row, idx) {
+        const prod = normalizePlanRecord(row['Plan'] || row.plan);
+        const rawStatus = String(row['Status'] || row.status || 'pending').toLowerCase();
+        const isPaid = (rawStatus === 'success' || rawStatus === 'paid' || rawStatus === 'captured') &&
+          Number(row.amount_paise || 15100) === 15100;
+        const deliveryState = row.delivery_status === 'Delivered Manually'
+          ? 'Delivered Manually'
+          : 'Awaiting Manual Delivery';
+        const dateStr = row.verified_at
+          ? new Date(row.verified_at).toLocaleString('en-IN', {
+              year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit'
+            })
+          : 'Verified in Supabase';
+
+        return {
+          dbId: row.id || null,
+          id: row.id ? ('ORDER-' + row.id) : ('ORDER-' + (idx + 1)),
+          customerName: row['Full Name'] || row.full_name || 'Customer',
+          customerEmail: row['Email'] || row.email || '',
+          customerMobile: row['Mobile Number'] || row.mobile_number || '',
+          purchasedProduct: prod.planName,
+          selectedLanguage: prod.language,
+          productAmount: 151,
+          paymentAmount: isPaid ? 151 : 0,
+          amountPaise: Number(row.amount_paise || 15100),
+          currency: row.currency || 'INR',
+          razorpayOrderId: row.razorpay_order_id || '—',
+          razorpayPaymentId: row.razorpay_payment_id || (isPaid ? 'Verified' : '— (Unpaid)'),
+          paymentStatus: isPaid ? 'PAID' : String(row['Status'] || 'PENDING').toUpperCase(),
+          orderStatus: isPaid ? deliveryState : 'Blocked — Unpaid',
+          purchaseDateTime: dateStr
+        };
+      }
+
+      // Fetch real customer orders from deployed `admin-orders` Edge Function
+      // Requires valid Supabase Auth JWT and server-side ADMIN_EMAIL allowlist match
+      async function syncOrdersFromSupabase() {
+        const client = getSupabaseClient();
+        if (!client) return { ok: false, error: 'Publishable VITE_SUPABASE_ANON_KEY is not configured yet.' };
+
+        try {
+          const { data: sessionData } = await client.auth.getSession();
+          const session = sessionData && sessionData.session;
+          if (!session) {
+            return { ok: false, error: 'Please sign in with your Supabase Admin account first.' };
+          }
+
+          const { data, error } = await client.functions.invoke('admin-orders', {
+            method: 'GET',
+            headers: {
+              Authorization: 'Bearer ' + session.access_token
+            }
+          });
+
+          if (error) {
+            return { ok: false, error: error.message || 'admin-orders rejected the request (check ADMIN_EMAIL secret on server).' };
+          }
+
+          const rows = (data && (data.orders || data.data || (Array.isArray(data) ? data : null))) || [];
+          state.orders = rows.map(mapSupabasePaymentRow);
+          renderAdminDashboard();
+          return { ok: true, count: state.orders.length };
+        } catch (err) {
+          return { ok: false, error: String(err && err.message ? err.message : err) };
+        }
+      }
+
+      // 5. RENDER 3 STUDY MATERIAL PRODUCT CARDS (MATCHING REFERENCE IMAGE DESIGN)
+      function renderProducts() {
+        const grid = document.getElementById('productCardsGrid');
+        const filterLabel = document.getElementById('activeLangFilterLabel');
+        if (!grid) return;
+
+        const filtered = state.langFilter === 'ALL'
+          ? PRODUCTS
+          : PRODUCTS.filter(function (p) { return p.planName === state.langFilter; });
+
+        if (filterLabel) {
+          filterLabel.textContent = state.langFilter === 'ALL'
+            ? 'All 3 Editions Available · ₹151 Each'
+            : 'Filtered: ' + state.langFilter + ' · ₹151';
+        }
+
+        grid.innerHTML = filtered.map(function (product) {
+          return `
+            <article class="product-card bg-white rounded-2xl p-4 sm:p-5 border border-gray-200/90 shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between items-center text-center">
+              
+              <!-- 3D Book Cover Matching Reference Image -->
+              <div class="w-full flex justify-center py-2">
+                <div class="book-3d w-36 sm:w-40 h-52 bg-gradient-to-b ${product.coverTheme} text-white p-3.5 flex flex-col justify-between text-left select-none relative overflow-hidden">
+                  
+                  <!-- Top Brand Ribbon -->
+                  <div class="flex items-center justify-between text-[9px] font-extrabold uppercase tracking-wider text-white/90 border-b border-white/20 pb-1">
+                    <span>RRB HUB</span>
+                    <span class="px-1.5 py-0.5 rounded bg-black/30">${product.code}</span>
+                  </div>
+
+                  <!-- Book Title Typography -->
+                  <div class="my-auto pt-1">
+                    <div class="text-xl font-black tracking-tight leading-none text-white drop-shadow">RRB</div>
+                    <div class="text-xs font-extrabold text-amber-300 tracking-wide uppercase mt-0.5">Study Material</div>
+                    <div class="text-sm font-black text-white mt-1 leading-tight">${escapeHtml(product.language)}</div>
+                    <div class="text-[10px] font-semibold text-white/85 mt-0.5">${escapeHtml(product.nativeLabel)}</div>
+                  </div>
+
+                  <!-- Miniature Locomotive Artwork Strip Inside Book Cover -->
+                  <div class="relative h-14 rounded-md overflow-hidden border border-white/25 shadow-inner mt-1">
+                    <img
+                      src="./assets/hero-locomotive.jpg"
+                      alt="${escapeHtml(product.displayTitle)} Cover"
+                      class="w-full h-full object-cover"
+                    />
+                    <div class="absolute bottom-0 inset-x-0 bg-black/60 text-[9px] font-extrabold text-white px-1.5 py-0.5 flex justify-between">
+                      <span>PDF EDITION</span>
+                      <span>₹${product.price}</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Product Title, Description, Actual Price & Buy Now Button -->
+              <div class="w-full mt-3 space-y-1.5">
+                <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-700">
+                  ${escapeHtml(product.language)} Language
+                </span>
+                <h3 class="text-base sm:text-lg font-black text-rrb-navy">${escapeHtml(product.displayTitle)}</h3>
+                <p class="text-[11px] text-gray-600 line-clamp-2 leading-relaxed px-1">
+                  ${escapeHtml(product.description)}
+                </p>
+                <div class="text-2xl font-black text-rrb-red pt-1">₹${product.price}</div>
+
+                <div class="pt-2">
+                  <button
+                    type="button"
+                    data-buy-plan="${escapeHtml(product.planName)}"
+                    class="buy-now-btn w-full bg-rrb-red hover:bg-rrb-redDark text-white font-extrabold text-xs sm:text-sm py-2.5 px-4 rounded-full shadow-pill flex items-center justify-center gap-1.5 transition-all transform hover:-translate-y-0.5"
+                  >
+                    <span>Buy Now</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </button>
+                </div>
+              </div>
+
+            </article>
+          `;
+        }).join('');
+
+        grid.querySelectorAll('.buy-now-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const plan = btn.getAttribute('data-buy-plan');
+            openCheckoutModal(plan);
+          });
+        });
+      }
+
+      // 6. RENDER FAQ ACCORDION
+      function renderFaqs() {
+        const container = document.getElementById('faqAccordionContainer');
+        if (!container) return;
+
+        container.innerHTML = FAQS.map(function (item, idx) {
+          const isOpen = idx === 0;
+          return `
+            <div class="border border-gray-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+              <button type="button" data-faq-idx="${idx}" class="faq-toggle-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition">
+                <span class="text-sm sm:text-base font-extrabold text-rrb-navy">${escapeHtml(item.q)}</span>
+                <span class="faq-icon w-7 h-7 rounded-full ${isOpen ? 'bg-rrb-red text-white rotate-180' : 'bg-red-50 text-rrb-red'} flex items-center justify-center flex-shrink-0 transition-transform">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </span>
+              </button>
+              <div id="faqAnswer_${idx}" class="${isOpen ? 'block' : 'hidden'} px-5 pb-4 pt-1 text-xs sm:text-sm text-gray-600 border-t border-gray-100 leading-relaxed">
+                ${escapeHtml(item.a)}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        container.querySelectorAll('.faq-toggle-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const idx = btn.getAttribute('data-faq-idx');
+            const answerEl = document.getElementById('faqAnswer_' + idx);
+            const iconEl = btn.querySelector('.faq-icon');
+            if (!answerEl) return;
+            const isHidden = answerEl.classList.contains('hidden');
+            if (isHidden) {
+              answerEl.classList.remove('hidden');
+              iconEl.classList.add('bg-rrb-red', 'text-white', 'rotate-180');
+              iconEl.classList.remove('bg-red-50', 'text-rrb-red');
+            } else {
+              answerEl.classList.add('hidden');
+              iconEl.classList.remove('bg-rrb-red', 'text-white', 'rotate-180');
+              iconEl.classList.add('bg-red-50', 'text-rrb-red');
+            }
+          });
+        });
+      }
+
+      // 7. CHECKOUT MODAL & DEPLOYED SUPABASE EDGE FUNCTION + RAZORPAY WORKFLOW
+      function updateCheckoutProductUI(planName) {
+        const product = PRODUCTS.find(function (p) { return p.planName === planName; }) || PRODUCTS[0];
+        state.selectedPlan = product.planName;
+
+        document.getElementById('checkoutBookCode').textContent = product.code;
+        document.getElementById('checkoutProductName').textContent = product.displayTitle;
+        document.getElementById('checkoutProductLang').textContent =
+          'Language: ' + product.language + ' (' + product.nativeLabel + ') · Single Language Edition';
+        document.getElementById('checkoutProductPrice').textContent = '₹' + product.price;
+
+        document.querySelectorAll('.checkout-lang-btn').forEach(function (btn) {
+          const btnPlan = btn.getAttribute('data-select-plan');
+          if (btnPlan === state.selectedPlan) {
+            btn.className = 'checkout-lang-btn py-2.5 px-3 rounded-xl border-2 border-rrb-red bg-rrb-red text-white text-xs font-extrabold shadow-sm transition text-center';
+          } else {
+            btn.className = 'checkout-lang-btn py-2.5 px-3 rounded-xl border-2 border-gray-200 bg-white text-rrb-navy hover:border-red-200 text-xs font-bold transition text-center';
+          }
+        });
+      }
+
+      function showCheckoutStep(stepName) {
+        ['checkoutStepForm', 'checkoutStepGateway', 'checkoutStepSuccess', 'checkoutStepFailed'].forEach(function (id) {
+          const el = document.getElementById(id);
+          if (el) el.classList.add('hidden');
+        });
+        const target = document.getElementById(stepName);
+        if (target) target.classList.remove('hidden');
+      }
+
+      function openCheckoutModal(planName) {
+        updateCheckoutProductUI(planName || state.selectedPlan);
+        const errBox = document.getElementById('checkoutFormError');
+        if (errBox) errBox.classList.add('hidden');
+        showCheckoutStep('checkoutStepForm');
+        document.getElementById('checkoutModal').classList.remove('hidden');
+      }
+
+      function closeCheckoutModal() {
+        document.getElementById('checkoutModal').classList.add('hidden');
+        state.isSubmittingOrder = false;
+        state.isPollingStatus = false;
+      }
+
+      function validateCustomerForm() {
+        const fullName = (document.getElementById('custFullName').value || '').trim();
+        const email = (document.getElementById('custEmail').value || '').trim();
+        const rawMobile = (document.getElementById('custMobile').value || '').replace(/\D/g, '');
+
+        if (fullName.length < 2) {
+          return { ok: false, error: 'Please enter your full name (at least 2 characters).' };
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          return { ok: false, error: 'Please enter a valid email address where we can send your study material PDF.' };
+        }
+        if (!/^[6-9]\d{9}$/.test(rawMobile)) {
+          return { ok: false, error: 'Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.' };
+        }
+        return {
+          ok: true,
+          data: {
+            fullName: fullName,
+            email: email,
+            mobileNumber: '+91' + rawMobile,
+            plan: state.selectedPlan
+          }
+        };
+      }
+
+      // Step 3: Create Razorpay Order securely via deployed `create-razorpay-order` Edge Function
+      async function handleCheckoutFormSubmit(e) {
+        e.preventDefault();
+        if (state.isSubmittingOrder) return;
+
+        const errBox = document.getElementById('checkoutFormError');
+        const validation = validateCustomerForm();
+        if (!validation.ok) {
+          errBox.textContent = validation.error;
+          errBox.classList.remove('hidden');
+          return;
+        }
+        errBox.classList.add('hidden');
+
+        const supabase = getSupabaseClient();
+        if (!supabase) {
+          errBox.innerHTML = 'Configuration required: Please enter your publishable <code>VITE_SUPABASE_ANON_KEY</code> in <strong>Admin Dashboard</strong> (or environment variables) so the website can call <code>https://dujgqwzxxmpdsikhkhbk.supabase.co/functions/v1/create-razorpay-order</code>.';
+          errBox.classList.remove('hidden');
+          return;
+        }
+
+        state.isSubmittingOrder = true;
+        const submitBtn = document.getElementById('payNowSubmitBtn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span>Creating Secure Order (₹151)...</span>';
+
+        const product = PRODUCTS.find(function (p) { return p.planName === validation.data.plan; }) || PRODUCTS[0];
+
+        try {
+          const { data: orderData, error: fnError } = await supabase.functions.invoke('create-razorpay-order', {
+            body: {
+              full_name: validation.data.fullName,
+              name: validation.data.fullName,
+              email: validation.data.email,
+              mobile_number: validation.data.mobileNumber,
+              mobile: validation.data.mobileNumber,
+              plan: product.planName,
+              language: product.planName
+            }
+          });
+
+          const resolvedOrderId = orderData && (orderData.order_id || orderData.orderId || orderData.id);
+          const serverReturnedKey = orderData && (orderData.key_id || orderData.keyId || orderData.key);
+          const resolvedKeyId = isRealConfiguredValue(serverReturnedKey)
+            ? serverReturnedKey
+            : (isRealConfiguredValue(state.publicConfig.razorpayKeyId) ? state.publicConfig.razorpayKeyId : 'rzp_live_U1gSJ0k5nhc192');
+
+          if (fnError || !resolvedOrderId) {
+            const msg = (fnError && fnError.message) || (orderData && orderData.error) || 'Temporary server error reaching create-razorpay-order.';
+            errBox.textContent = 'Unable to create order: ' + msg;
+            errBox.classList.remove('hidden');
+            submitBtn.innerHTML = originalText;
+            state.isSubmittingOrder = false;
+            return;
+          }
+
+          state.activeDraftOrder = {
+            id: resolvedOrderId,
+            customerName: validation.data.fullName,
+            customerEmail: validation.data.email,
+            customerMobile: validation.data.mobileNumber,
+            purchasedProduct: product.planName,
+            selectedLanguage: product.language,
+            productAmount: 151,
+            paymentAmount: 151,
+            amountPaise: 15100,
+            currency: 'INR',
+            razorpayOrderId: resolvedOrderId,
+            razorpayKeyId: resolvedKeyId
+          };
+
+          submitBtn.innerHTML = originalText;
+          state.isSubmittingOrder = false;
+
+          document.getElementById('gatewayOrderIdDisplay').textContent =
+            resolvedOrderId + ' · ' + product.planName + ' (₹151)';
+          document.getElementById('gatewayStatusHeading').textContent = 'Ready for Secure Razorpay Payment';
+          document.getElementById('gatewayModeDescription').innerHTML =
+            'Server order <code>' + escapeHtml(resolvedOrderId) + '</code> created for <strong>₹151.00 INR</strong>. Complete your payment in the Razorpay Checkout window.';
+          document.getElementById('launchLiveRazorpayBtn').classList.remove('hidden');
+          document.getElementById('checkServerVerificationBtn').classList.add('hidden');
+
+          showCheckoutStep('checkoutStepGateway');
+          launchRazorpayPopup();
+        } catch (err) {
+          errBox.textContent = 'Temporary server error while creating Razorpay order: ' + String(err && err.message ? err.message : err);
+          errBox.classList.remove('hidden');
+          submitBtn.innerHTML = originalText;
+          state.isSubmittingOrder = false;
+        }
+      }
+
+      // Open Official Razorpay Standard Checkout Modal
+      function launchRazorpayPopup() {
+        if (!state.activeDraftOrder) return;
+        const draft = state.activeDraftOrder;
+        const keyId = draft.razorpayKeyId || state.publicConfig.razorpayKeyId;
+
+        if (!isRealConfiguredValue(keyId)) {
+          document.getElementById('gatewayStatusHeading').textContent = 'Razorpay Public Key ID Required';
+          document.getElementById('gatewayModeDescription').innerHTML =
+            'Please configure your publishable <code>RAZORPAY_KEY_ID</code> in Supabase Edge Function Secrets or <strong>Admin Dashboard</strong>.';
+          return;
+        }
+
+        if (typeof window.Razorpay !== 'function') {
+          finalizeOrderOutcome('FAILED', 'Razorpay Checkout SDK could not be loaded. Please check your internet connection.');
+          return;
+        }
+
+        const rzpOptions = {
+          key: keyId,
+          amount: 15100,
+          currency: 'INR',
+          name: 'RRB Hub',
+          description: draft.purchasedProduct + ' — Single Language Study Material',
+          order_id: draft.razorpayOrderId,
+          prefill: {
+            name: draft.customerName,
+            email: draft.customerEmail,
+            contact: draft.customerMobile
+          },
+          notes: {
+            full_name: draft.customerName,
+            email: draft.customerEmail,
+            mobile_number: draft.customerMobile,
+            plan: draft.purchasedProduct
+          },
+          theme: {
+            color: '#ED1010'
+          },
+          handler: function (response) {
+            // NEVER trust frontend callback alone! Poll deployed `payment-status` Edge Function.
+            const paymentId = (response && response.razorpay_payment_id) || '';
+            const signature = (response && response.razorpay_signature) || '';
+            state.lastSubmittedPaymentId = paymentId;
+            pollServerPaymentStatus(draft.razorpayOrderId, paymentId, signature);
+          },
+          modal: {
+            ondismiss: function () {
+              finalizeOrderOutcome('CANCELLED', 'You closed the Razorpay checkout window before completing payment.');
+            }
+          }
+        };
+
+        const rzp = new window.Razorpay(rzpOptions);
+        rzp.on('payment.failed', function (resp) {
+          const reason = (resp && resp.error && resp.error.description) || 'Payment failed at bank/gateway.';
+          finalizeOrderOutcome('FAILED', reason);
+        });
+        rzp.open();
+      }
+
+      // Step 4: Poll deployed `payment-status` Edge Function on `dujgqwzxxmpdsikhkhbk.supabase.co`
+      // Only displays payment confirmation after server-side database verification succeeds.
+      async function pollServerPaymentStatus(orderId, paymentId, signature) {
+        if (!state.activeDraftOrder || state.isPollingStatus) return;
+        state.isPollingStatus = true;
+
+        const headingEl = document.getElementById('gatewayStatusHeading');
+        const descEl = document.getElementById('gatewayModeDescription');
+        const launchBtn = document.getElementById('launchLiveRazorpayBtn');
+        const recheckBtn = document.getElementById('checkServerVerificationBtn');
+
+        launchBtn.classList.add('hidden');
+        recheckBtn.classList.add('hidden');
+        headingEl.textContent = 'Payment Submitted — Verifying on Server...';
+        descEl.innerHTML =
+          'Payment ID <code>' + escapeHtml(paymentId) + '</code> received. Checking server-verified status via <code>payment-status</code> and <code>razorpay-webhook</code>...';
+
+        const supabase = getSupabaseClient();
+        const maxAttempts = 25; // ~75 seconds bounded polling for webhook confirmation
+        for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+          try {
+            const { data, error } = await supabase.functions.invoke('payment-status', {
+              body: {
+                razorpay_order_id: orderId,
+                order_id: orderId,
+                razorpay_payment_id: paymentId,
+                payment_id: paymentId,
+                razorpay_signature: signature
+              }
+            });
+
+            const statusStr = String((data && (data.status || data.state || data.payment_status)) || '').toLowerCase();
+            const isVerified = statusStr === 'verified' || statusStr === 'success' || statusStr === 'paid' || (data && data.verified === true);
+
+            if (!error && isVerified) {
+              state.isPollingStatus = false;
+              showVerifiedOrderConfirmation(paymentId);
+              if (state.adminUnlocked) {
+                await syncOrdersFromSupabase();
+              }
+              return;
+            }
+
+            if (!error && statusStr === 'failed') {
+              state.isPollingStatus = false;
+              finalizeOrderOutcome('FAILED', 'Server verification reported that the payment was not captured.');
+              return;
+            }
+          } catch (pollErr) {}
+
+          await new Promise(function (resolve) { setTimeout(resolve, 3000); });
+        }
+
+        // Honest pending state if webhook takes longer than 75 seconds — never fake success
+        state.isPollingStatus = false;
+        headingEl.textContent = 'Payment Received — Server Verification Pending';
+        descEl.innerHTML =
+          'Your payment (<code>' + escapeHtml(paymentId) + '</code>) was submitted, and we are waiting for final webhook confirmation. Click below to re-check status, or email <a href="mailto:rrbhub@gmail.com" class="underline font-bold">rrbhub@gmail.com</a> with your Order ID (<code>' + escapeHtml(orderId) + '</code>).';
+        recheckBtn.classList.remove('hidden');
+      }
+
+      function showVerifiedOrderConfirmation(paymentId) {
+        if (!state.activeDraftOrder) return;
+        const draft = state.activeDraftOrder;
+        const verifiedOrder = {
+          id: draft.id,
+          customerName: draft.customerName,
+          customerEmail: draft.customerEmail,
+          customerMobile: draft.customerMobile,
+          purchasedProduct: draft.purchasedProduct,
+          selectedLanguage: draft.selectedLanguage,
+          productAmount: 151,
+          paymentAmount: 151,
+          amountPaise: 15100,
+          currency: 'INR',
+          razorpayOrderId: draft.razorpayOrderId,
+          razorpayPaymentId: paymentId,
+          paymentStatus: 'PAID',
+          orderStatus: 'Awaiting Manual Delivery'
+        };
+        populateSuccessReceipt(verifiedOrder);
+        showCheckoutStep('checkoutStepSuccess');
+      }
+
+      function populateSuccessReceipt(order) {
+        document.getElementById('receiptCustName').textContent = order.customerName;
+        document.getElementById('receiptCustEmail').textContent = order.customerEmail;
+        document.getElementById('receiptCustMobile').textContent = order.customerMobile;
+        document.getElementById('receiptProductPlan').textContent = order.purchasedProduct + ' (' + order.selectedLanguage + ')';
+        document.getElementById('receiptAmount').textContent = '₹' + order.paymentAmount + '.00 INR';
+        document.getElementById('receiptOrderId').textContent = order.razorpayOrderId;
+        document.getElementById('receiptPaymentId').textContent = order.razorpayPaymentId;
+      }
+
+      function finalizeOrderOutcome(statusLabel, reasonText) {
+        document.getElementById('failedBadgeText').textContent = 'Payment Status: ' + statusLabel + ' (Not Paid)';
+        document.getElementById('failedTitleText').textContent =
+          statusLabel === 'CANCELLED' ? 'Payment Was Cancelled' : 'Payment Failed Verification';
+        document.getElementById('failedReasonText').textContent =
+          reasonText + ' This order has NOT been marked as PAID.';
+        showCheckoutStep('checkoutStepFailed');
+      }
+
+      // 8. ADMIN DASHBOARD RENDERING & SUPABASE MANUAL DELIVERY UPDATES
+      function renderAdminDashboard() {
+        const paidOrders = state.orders.filter(function (o) { return o.paymentStatus === 'PAID'; });
+        const awaitingDelivery = paidOrders.filter(function (o) { return o.orderStatus !== 'Delivered Manually'; });
+        const deliveredOrders = paidOrders.filter(function (o) { return o.orderStatus === 'Delivered Manually'; });
+        const totalRevenue = paidOrders.reduce(function (sum, o) { return sum + (Number(o.paymentAmount) || 151); }, 0);
+
+        const navBadge = document.getElementById('navPendingBadge');
+        if (navBadge) {
+          if (state.adminUnlocked && awaitingDelivery.length > 0) {
+            navBadge.textContent = String(awaitingDelivery.length);
+            navBadge.classList.remove('hidden');
+          } else {
+            navBadge.classList.add('hidden');
+          }
+        }
+
+        const kpiPaid = document.getElementById('kpiPaidCount');
+        const kpiPending = document.getElementById('kpiPendingDeliveryCount');
+        const kpiDelivered = document.getElementById('kpiDeliveredCount');
+        const kpiRev = document.getElementById('kpiTotalRevenue');
+
+        if (kpiPaid) kpiPaid.textContent = String(paidOrders.length);
+        if (kpiPending) kpiPending.textContent = String(awaitingDelivery.length);
+        if (kpiDelivered) kpiDelivered.textContent = String(deliveredOrders.length);
+        if (kpiRev) kpiRev.textContent = '₹' + totalRevenue.toLocaleString('en-IN');
+
+        const searchVal = ((document.getElementById('adminOrderSearch') || {}).value || '').toLowerCase().trim();
+        const payFilter = ((document.getElementById('adminPaymentFilter') || {}).value || 'PAID');
+        const langFilter = ((document.getElementById('adminLanguageFilter') || {}).value || 'ALL');
+
+        const filteredOrders = state.orders.filter(function (o) {
+          if (payFilter === 'PAID' && o.paymentStatus !== 'PAID') return false;
+          if (payFilter === 'AWAITING_DELIVERY' && (o.paymentStatus !== 'PAID' || o.orderStatus === 'Delivered Manually')) return false;
+          if (payFilter === 'DELIVERED' && (o.paymentStatus !== 'PAID' || o.orderStatus !== 'Delivered Manually')) return false;
+          if (payFilter === 'UNPAID' && o.paymentStatus === 'PAID') return false;
+          if (langFilter !== 'ALL' && o.purchasedProduct !== langFilter) return false;
+
+          if (searchVal) {
+            const hay = [
+              o.id, o.customerName, o.customerEmail, o.customerMobile,
+              o.purchasedProduct, o.razorpayOrderId, o.razorpayPaymentId
+            ].join(' ').toLowerCase();
+            if (!hay.includes(searchVal)) return false;
+          }
+          return true;
+        });
+
+        const tbody = document.getElementById('adminOrdersTableBody');
+        if (!tbody) return;
+
+        if (filteredOrders.length === 0) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="5" class="py-8 text-center text-gray-500 font-medium">
+                No verified orders match the current filter. Click <strong>↻ Refresh Orders from Supabase</strong> to load the latest records from <code>public."Payment"</code>.
+              </td>
+            </tr>
+          `;
+        } else {
+          tbody.innerHTML = filteredOrders.map(function (o) {
+            const isPaid = o.paymentStatus === 'PAID';
+            const isDelivered = o.orderStatus === 'Delivered Manually';
+
+            const mailtoSubject = encodeURIComponent('Your RRB Hub Study Material – ' + o.purchasedProduct + ' (Order ' + o.razorpayOrderId + ')');
+            const mailtoBody = encodeURIComponent(
+              'Hello ' + o.customerName + ',\n\n' +
+              'Thank you for purchasing the ' + o.purchasedProduct + ' (₹151) from RRB Hub.\n' +
+              'Your Razorpay payment (' + o.razorpayPaymentId + ') has been verified.\n\n' +
+              'Please find your purchased ' + o.selectedLanguage + ' study material attached to this email.\n\n' +
+              'Best wishes for your RRB examination,\n' +
+              'RRB Hub Team (rrbhub@gmail.com)'
+            );
+
+            return `
+              <tr class="${isPaid ? 'bg-white hover:bg-gray-50/80' : 'bg-red-50/40'} transition">
+                <td class="py-3.5 px-4 align-top">
+                  <div class="font-extrabold text-rrb-navy">${escapeHtml(o.id)}</div>
+                  <div class="text-[11px] text-gray-500">${escapeHtml(o.purchaseDateTime)}</div>
+                  <div class="text-[10px] font-mono text-gray-500 mt-1">Order: ${escapeHtml(o.razorpayOrderId)}</div>
+                </td>
+                <td class="py-3.5 px-4 align-top">
+                  <div class="font-bold text-rrb-navy">${escapeHtml(o.customerName)}</div>
+                  <div class="text-rrb-red font-semibold break-all">${escapeHtml(o.customerEmail)}</div>
+                  <div class="text-gray-600 text-[11px]">${escapeHtml(o.customerMobile)}</div>
+                </td>
+                <td class="py-3.5 px-4 align-top">
+                  <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-red-50 text-rrb-red border border-red-200">
+                    ${escapeHtml(o.purchasedProduct)}
+                  </span>
+                  <div class="text-[11px] text-gray-600 mt-1">Language: <strong>${escapeHtml(o.selectedLanguage)}</strong></div>
+                  <div class="text-xs font-black text-rrb-navy mt-0.5">₹${escapeHtml(o.productAmount)} INR</div>
+                </td>
+                <td class="py-3.5 px-4 align-top">
+                  ${isPaid
+                    ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-800">
+                         ✓ PAID (Verified ₹151)
+                       </span>
+                       <div class="text-[10px] font-mono text-gray-600 mt-1">Pay ID: ${escapeHtml(o.razorpayPaymentId)}</div>`
+                    : `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-red-100 text-red-800">
+                         ✕ ${escapeHtml(o.paymentStatus)} (UNPAID)
+                       </span>
+                       <div class="text-[10px] text-red-700 font-semibold mt-1">Do NOT send study material</div>`
+                  }
+                </td>
+                <td class="py-3.5 px-4 align-top">
+                  ${isPaid
+                    ? `<div class="space-y-2">
+                         <div class="flex items-center gap-1.5">
+                           <span class="px-2 py-0.5 rounded text-[10px] font-extrabold ${isDelivered ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-amber-100 text-amber-900'}">
+                             ${isDelivered ? '✓ Delivered Manually' : '● Awaiting Manual Delivery'}
+                           </span>
+                         </div>
+                         <div class="flex flex-wrap items-center gap-1.5">
+                           <a
+                             href="mailto:${escapeHtml(o.customerEmail)}?subject=${mailtoSubject}&body=${mailtoBody}"
+                             class="px-3 py-1.5 rounded-lg bg-rrb-red hover:bg-rrb-redDark text-white font-bold text-[11px] shadow-sm inline-flex items-center gap-1"
+                           >
+                             <span>1. Email PDF to Customer</span>
+                           </a>
+                           <button
+                             type="button"
+                             data-toggle-delivery="${escapeHtml(o.id)}"
+                             class="toggle-delivery-btn px-2.5 py-1.5 rounded-lg border border-gray-300 bg-white hover:bg-gray-100 text-rrb-navy font-bold text-[11px]"
+                           >
+                             ${isDelivered ? 'Mark as Awaiting Delivery' : 'Mark as Delivered'}
+                           </button>
+                         </div>
+                       </div>`
+                    : `<span class="text-[11px] font-bold text-gray-400 italic">Locked — Payment Not Verified</span>`
+                  }
+                </td>
+              </tr>
+            `;
+          }).join('');
+
+          tbody.querySelectorAll('.toggle-delivery-btn').forEach(function (btn) {
+            btn.addEventListener('click', async function () {
+              const ordId = btn.getAttribute('data-toggle-delivery');
+              const target = state.orders.find(function (x) { return x.id === ordId; });
+              if (!target || target.paymentStatus !== 'PAID') return;
+
+              const nextStatus = target.orderStatus === 'Delivered Manually'
+                ? 'Awaiting Manual Delivery'
+                : 'Delivered Manually';
+
+              const client = getSupabaseClient();
+              if (!client) return;
+
+              btn.disabled = true;
+              btn.textContent = 'Saving to Supabase...';
+
+              try {
+                const { data: sessionData } = await client.auth.getSession();
+                const token = sessionData && sessionData.session ? sessionData.session.access_token : '';
+
+                const { error } = await client.functions.invoke('admin-orders', {
+                  method: 'PATCH',
+                  headers: token ? { Authorization: 'Bearer ' + token } : {},
+                  body: {
+                    id: target.dbId,
+                    order_id: target.razorpayOrderId,
+                    razorpay_order_id: target.razorpayOrderId,
+                    razorpay_payment_id: target.razorpayPaymentId,
+                    delivery_status: nextStatus
+                  }
+                });
+
+                if (!error) {
+                  target.orderStatus = nextStatus;
+                  renderAdminDashboard();
+                } else {
+                  btn.disabled = false;
+                  btn.textContent = 'Retry Save';
+                }
+              } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Retry Save';
+              }
+            });
+          });
+        }
+
+        const prodList = document.getElementById('adminProductCatalogList');
+        if (prodList) {
+          prodList.innerHTML = PRODUCTS.map(function (p) {
+            return `
+              <div class="p-5 rounded-2xl border border-gray-200 bg-gray-50/70 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-extrabold uppercase px-2.5 py-0.5 rounded bg-rrb-navy text-white">${escapeHtml(p.code)}</span>
+                  <span class="text-lg font-black text-rrb-red">₹${p.price} INR</span>
+                </div>
+                <div class="text-base font-black text-rrb-navy">${escapeHtml(p.planName)}</div>
+                <div class="text-xs text-gray-600">${escapeHtml(p.description)}</div>
+                <div class="pt-2 border-t border-gray-200 text-[11px] font-mono text-gray-500">
+                  Supabase Plan Label: "${escapeHtml(p.planName)}" · ${p.amountPaise} paise
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+      }
+
+      // 9. NAVIGATION & VIEW SWITCHING
+      async function switchMainView(target) {
+        const storefront = document.getElementById('storefrontView');
+        const adminView = document.getElementById('adminDashboardView');
+        const mobileDrawer = document.getElementById('mobileMenuDrawer');
+        if (mobileDrawer) mobileDrawer.classList.add('hidden');
+
+        if (target === 'admin') {
+          storefront.classList.add('hidden');
+          adminView.classList.remove('hidden');
+          if (state.adminUnlocked) {
+            await syncOrdersFromSupabase();
+          }
+          renderAdminDashboard();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+
+        adminView.classList.add('hidden');
+        storefront.classList.remove('hidden');
+
+        const sectionMap = {
+          home: 'heroSection',
+          materials: 'studyMaterialsSection',
+          about: 'aboutSection',
+          faq: 'faqSection',
+          contact: 'contactSection'
+        };
+        const secId = sectionMap[target] || 'heroSection';
+        const secEl = document.getElementById(secId);
+        if (secEl) {
+          secEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      function openPolicyModal(policyKey) {
+        const pol = POLICIES[policyKey];
+        if (!pol) return;
+        document.getElementById('policyModalTitle').textContent = pol.title;
+        document.getElementById('policyModalBody').innerHTML = pol.html;
+        document.getElementById('policyModal').classList.remove('hidden');
+      }
+
+      function closePolicyModal() {
+        document.getElementById('policyModal').classList.add('hidden');
+      }
+
+      function exportPaidOrdersCsv() {
+        if (!state.adminUnlocked) return;
+        const paid = state.orders.filter(function (o) { return o.paymentStatus === 'PAID'; });
+        const headers = [
+          'Order ID', 'Purchase Date', 'Customer Name', 'Customer Email', 'Mobile Number',
+          'Purchased Product', 'Language', 'Amount INR', 'Razorpay Order ID', 'Razorpay Payment ID',
+          'Payment Status', 'Manual Delivery Status'
+        ];
+        const rows = paid.map(function (o) {
+          return [
+            o.id, o.purchaseDateTime, o.customerName, o.customerEmail, o.customerMobile,
+            o.purchasedProduct, o.selectedLanguage, o.paymentAmount, o.razorpayOrderId,
+            o.razorpayPaymentId, o.paymentStatus, o.orderStatus
+          ].map(function (cell) {
+            return '"' + String(cell || '').replace(/"/g, '""') + '"';
+          }).join(',');
+        });
+        const csvContent = [headers.join(',')].concat(rows).join('\n');
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'rrb-hub-paid-orders.csv');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      // Synchronize public config inputs across Gate & Tab 3
+      function syncPublicConfigInputs() {
+        const urlInput = document.getElementById('cfgSupabaseUrl');
+        const anonInput = document.getElementById('cfgSupabaseAnonKey');
+        const rzpInput = document.getElementById('cfgRazorpayKeyId');
+        const gateAnon = document.getElementById('gateSupabaseAnonKey');
+        const gateRzp = document.getElementById('gateRazorpayKeyId');
+
+        if (urlInput) urlInput.value = state.publicConfig.supabaseUrl || 'https://dujgqwzxxmpdsikhkhbk.supabase.co';
+        if (anonInput) anonInput.value = state.publicConfig.supabaseAnonKey || '';
+        if (rzpInput) rzpInput.value = state.publicConfig.razorpayKeyId || '';
+        if (gateAnon) gateAnon.value = state.publicConfig.supabaseAnonKey || '';
+        if (gateRzp) gateRzp.value = state.publicConfig.razorpayKeyId || '';
+      }
+
+      // Check if an active Supabase Auth session already exists on page load
+      async function restoreAdminSessionIfValid() {
+        const client = getSupabaseClient();
+        if (!client) return;
+        try {
+          const { data } = await client.auth.getSession();
+          if (data && data.session && data.session.user) {
+            const syncRes = await syncOrdersFromSupabase();
+            if (syncRes.ok) {
+              state.adminUnlocked = true;
+              state.adminUserEmail = data.session.user.email || '';
+              document.getElementById('adminLoginGate').classList.add('hidden');
+              document.getElementById('adminUnlockedWorkspace').classList.remove('hidden');
+              document.getElementById('adminAuthStatusBadge').textContent = 'Verified: ' + state.adminUserEmail;
+              document.getElementById('adminAuthStatusBadge').className = 'px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-800';
+              renderAdminDashboard();
+            }
+          }
+        } catch (err) {}
+      }
+
+      // 10. INITIALIZE EVENT LISTENERS ON DOM READY
+      function initApp() {
+        getSupabaseClient();
+        syncPublicConfigInputs();
+        renderProducts();
+        renderFaqs();
+        renderAdminDashboard();
+        restoreAdminSessionIfValid();
+
+        document.querySelectorAll('[data-nav]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            switchMainView(btn.getAttribute('data-nav'));
+          });
+        });
+
+        document.getElementById('navLogoBtn').addEventListener('click', function () {
+          switchMainView('home');
+        });
+        document.getElementById('headerExploreBtn').addEventListener('click', function () {
+          switchMainView('materials');
+        });
+        document.getElementById('heroExploreBtn').addEventListener('click', function () {
+          switchMainView('materials');
+        });
+        document.getElementById('aboutExploreBtn').addEventListener('click', function () {
+          switchMainView('materials');
+        });
+        document.getElementById('bottomBannerCtaBtn').addEventListener('click', function () {
+          switchMainView('materials');
+        });
+        document.getElementById('heroHowItWorksBtn').addEventListener('click', function () {
+          const el = document.getElementById('howBuyingWorksSection');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.querySelectorAll('.quick-buy-pill').forEach(function (pill) {
+          pill.addEventListener('click', function () {
+            openCheckoutModal(pill.getAttribute('data-quick-buy'));
+          });
+        });
+
+        function handleLangFilterChange(val) {
+          state.langFilter = val;
+          const dSel = document.getElementById('headerLangFilter');
+          const mSel = document.getElementById('mobileLangFilter');
+          if (dSel && dSel.value !== val) dSel.value = val;
+          if (mSel && mSel.value !== val) mSel.value = val;
+          renderProducts();
+          switchMainView('materials');
+        }
+        document.getElementById('headerLangFilter').addEventListener('change', function (e) {
+          handleLangFilterChange(e.target.value);
+        });
+        document.getElementById('mobileLangFilter').addEventListener('change', function (e) {
+          handleLangFilterChange(e.target.value);
+        });
+
+        document.getElementById('mobileMenuBtn').addEventListener('click', function () {
+          const drawer = document.getElementById('mobileMenuDrawer');
+          drawer.classList.toggle('hidden');
+        });
+        document.getElementById('mobileShopQuickBtn').addEventListener('click', function () {
+          switchMainView('materials');
+        });
+        document.getElementById('mobileDrawerExploreBtn').addEventListener('click', function () {
+          switchMainView('materials');
+        });
+
+        // Checkout Modal Events
+        document.getElementById('closeCheckoutModalBtn').addEventListener('click', closeCheckoutModal);
+        document.querySelectorAll('.checkout-lang-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            updateCheckoutProductUI(btn.getAttribute('data-select-plan'));
+          });
+        });
+        document.getElementById('customerCheckoutForm').addEventListener('submit', handleCheckoutFormSubmit);
+        document.getElementById('backToFormBtn').addEventListener('click', function () {
+          showCheckoutStep('checkoutStepForm');
+        });
+        document.getElementById('launchLiveRazorpayBtn').addEventListener('click', launchRazorpayPopup);
+        document.getElementById('checkServerVerificationBtn').addEventListener('click', function () {
+          if (state.activeDraftOrder && state.lastSubmittedPaymentId) {
+            pollServerPaymentStatus(state.activeDraftOrder.razorpayOrderId, state.lastSubmittedPaymentId, '');
+          }
+        });
+        document.getElementById('retryPaymentBtn').addEventListener('click', function () {
+          showCheckoutStep('checkoutStepForm');
+        });
+        document.getElementById('closeFailedBtn').addEventListener('click', closeCheckoutModal);
+        document.getElementById('successCloseBtn').addEventListener('click', closeCheckoutModal);
+        document.getElementById('successViewInAdminBtn').addEventListener('click', function () {
+          closeCheckoutModal();
+          switchMainView('admin');
+        });
+
+        // Policy Modal Events
+        document.querySelectorAll('.policy-open-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            openPolicyModal(btn.getAttribute('data-policy'));
+          });
+        });
+        document.getElementById('closePolicyModalBtn').addEventListener('click', closePolicyModal);
+        document.getElementById('closePolicyFooterBtn').addEventListener('click', closePolicyModal);
+
+        // Admin Dashboard Controls
+        document.getElementById('adminBackToStoreBtn').addEventListener('click', function () {
+          switchMainView('home');
+        });
+        document.getElementById('adminSyncSupabaseBtn').addEventListener('click', async function () {
+          if (!state.adminUnlocked) return;
+          const btn = document.getElementById('adminSyncSupabaseBtn');
+          btn.textContent = '↻ Syncing...';
+          await syncOrdersFromSupabase();
+          btn.textContent = '↻ Refresh Orders from Supabase';
+        });
+        document.getElementById('adminExportCsvBtn').addEventListener('click', exportPaidOrdersCsv);
+        document.getElementById('adminOrderSearch').addEventListener('input', renderAdminDashboard);
+        document.getElementById('adminPaymentFilter').addEventListener('change', renderAdminDashboard);
+        document.getElementById('adminLanguageFilter').addEventListener('change', renderAdminDashboard);
+
+        // Strict Admin Lock / Sign Out
+        document.getElementById('adminLockBtn').addEventListener('click', async function () {
+          state.adminUnlocked = false;
+          state.adminUserEmail = '';
+          state.orders = [];
+          const client = getSupabaseClient();
+          if (client) {
+            try { await client.auth.signOut(); } catch (e) {}
+          }
+          document.getElementById('adminUnlockedWorkspace').classList.add('hidden');
+          document.getElementById('adminLoginGate').classList.remove('hidden');
+          document.getElementById('adminAuthStatusBadge').textContent = 'Supabase Auth Required';
+          document.getElementById('adminAuthStatusBadge').className = 'px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-red-100 text-rrb-red';
+          renderAdminDashboard();
+        });
+
+        // Strict Admin Sign In via Supabase Auth + Server-Side `admin-orders` ADMIN_EMAIL Allowlist Verification
+        document.getElementById('adminLoginForm').addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const email = (document.getElementById('adminEmailInput').value || '').trim();
+          const pass = (document.getElementById('adminPasswordInput').value || '').trim();
+          const errEl = document.getElementById('adminLoginError');
+          const submitBtn = document.getElementById('adminLoginSubmitBtn');
+          errEl.classList.add('hidden');
+
+          const client = getSupabaseClient();
+          if (!client) {
+            errEl.innerHTML = 'Publishable <code>VITE_SUPABASE_ANON_KEY</code> is not configured yet. Please paste it in the Public Frontend Connection Keys box below and click Save.';
+            errEl.classList.remove('hidden');
+            return;
+          }
+
+          submitBtn.textContent = 'Authenticating with Supabase...';
+          try {
+            const { data, error } = await client.auth.signInWithPassword({ email: email, password: pass });
+            if (error || !data || !data.session) {
+              errEl.textContent = 'Supabase Auth failed: ' + ((error && error.message) || 'Invalid email or password.');
+              errEl.classList.remove('hidden');
+              submitBtn.textContent = 'Sign In with Supabase Auth';
+              return;
+            }
+
+            // Verify server-side ADMIN_EMAIL allowlist by calling `admin-orders`
+            const syncRes = await syncOrdersFromSupabase();
+            if (!syncRes.ok) {
+              await client.auth.signOut();
+              errEl.textContent = 'Access denied by server allowlist: ' + syncRes.error;
+              errEl.classList.remove('hidden');
+              submitBtn.textContent = 'Sign In with Supabase Auth';
+              return;
+            }
+
+            state.adminUnlocked = true;
+            state.adminUserEmail = data.session.user.email || email;
+            document.getElementById('adminLoginGate').classList.add('hidden');
+            document.getElementById('adminUnlockedWorkspace').classList.remove('hidden');
+            document.getElementById('adminAuthStatusBadge').textContent = 'Verified: ' + state.adminUserEmail;
+            document.getElementById('adminAuthStatusBadge').className = 'px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-800';
+            submitBtn.textContent = 'Sign In with Supabase Auth';
+            renderAdminDashboard();
+          } catch (authErr) {
+            errEl.textContent = 'Authentication error: ' + String(authErr && authErr.message ? authErr.message : authErr);
+            errEl.classList.remove('hidden');
+            submitBtn.textContent = 'Sign In with Supabase Auth';
+          }
+        });
+
+        // Save Publishable Keys from Login Gate
+        document.getElementById('saveGatePublicConfigBtn').addEventListener('click', function () {
+          state.publicConfig.supabaseAnonKey = (document.getElementById('gateSupabaseAnonKey').value || '').trim();
+          state.publicConfig.razorpayKeyId = (document.getElementById('gateRazorpayKeyId').value || '').trim();
+          try {
+            localStorage.setItem('rrb_hub_public_cfg_v2', JSON.stringify(state.publicConfig));
+          } catch (e) {}
+          syncPublicConfigInputs();
+          getSupabaseClient();
+          const fb = document.getElementById('gateCfgFeedback');
+          fb.classList.remove('hidden');
+          setTimeout(function () { fb.classList.add('hidden'); }, 2500);
+        });
+
+        // Admin Tabs
+        document.querySelectorAll('.admin-tab-btn').forEach(function (tabBtn) {
+          tabBtn.addEventListener('click', function () {
+            const tab = tabBtn.getAttribute('data-admin-tab');
+            document.querySelectorAll('.admin-tab-btn').forEach(function (b) {
+              b.className = 'admin-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-rrb-navy border border-gray-200 hover:bg-gray-50';
+            });
+            tabBtn.className = 'admin-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold bg-rrb-red text-white shadow-sm';
+
+            document.getElementById('adminTabOrders').classList.toggle('hidden', tab !== 'orders');
+            document.getElementById('adminTabProducts').classList.toggle('hidden', tab !== 'products');
+            document.getElementById('adminTabBackend').classList.toggle('hidden', tab !== 'backend');
+          });
+        });
+
+        // Save Public Frontend Config in Tab 3
+        document.getElementById('savePublicConfigBtn').addEventListener('click', function () {
+          state.publicConfig.supabaseUrl = (document.getElementById('cfgSupabaseUrl').value || '').trim();
+          state.publicConfig.supabaseAnonKey = (document.getElementById('cfgSupabaseAnonKey').value || '').trim();
+          state.publicConfig.razorpayKeyId = (document.getElementById('cfgRazorpayKeyId').value || '').trim();
+          try {
+            localStorage.setItem('rrb_hub_public_cfg_v2', JSON.stringify(state.publicConfig));
+          } catch (e) {}
+          syncPublicConfigInputs();
+          getSupabaseClient();
+          if (state.adminUnlocked) {
+            syncOrdersFromSupabase();
+          }
+          const fb = document.getElementById('cfgSaveFeedback');
+          fb.classList.remove('hidden');
+          setTimeout(function () { fb.classList.add('hidden'); }, 2500);
+        });
+
+        // 11. GEMINI AI STUDY ASSISTANT (CONNECTED TO DEPLOYED `gemini-study-assistant` EDGE FUNCTION)
+        document.getElementById('openAiAssistantBtn').addEventListener('click', function () {
+          document.getElementById('aiAssistantModal').classList.remove('hidden');
+        });
+        document.getElementById('closeAiAssistantBtn').addEventListener('click', function () {
+          document.getElementById('aiAssistantModal').classList.add('hidden');
+        });
+        document.getElementById('aiAssistantForm').addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const inputEl = document.getElementById('aiAssistantInput');
+          const msgBox = document.getElementById('aiAssistantMessages');
+          const sendBtn = document.getElementById('aiAssistantSendBtn');
+          const promptText = (inputEl.value || '').trim();
+          if (!promptText) return;
+
+          inputEl.value = '';
+          msgBox.insertAdjacentHTML(
+            'beforeend',
+            '<div class="bg-rrb-red text-white p-3 rounded-2xl ml-8 text-right font-medium shadow-sm">' + escapeHtml(promptText) + '</div>'
+          );
+          msgBox.scrollTop = msgBox.scrollHeight;
+
+          const client = getSupabaseClient();
+          if (!client) {
+            msgBox.insertAdjacentHTML(
+              'beforeend',
+              '<div class="bg-white p-3.5 rounded-2xl border border-red-200 text-gray-700 mr-8">Please configure your publishable <code>VITE_SUPABASE_ANON_KEY</code> to connect to the deployed <code>gemini-study-assistant</code> Edge Function on <code>dujgqwzxxmpdsikhkhbk.supabase.co</code>.</div>'
+            );
+            msgBox.scrollTop = msgBox.scrollHeight;
+            return;
+          }
+
+          sendBtn.disabled = true;
+          sendBtn.textContent = '...';
+
+          try {
+            const { data, error } = await client.functions.invoke('gemini-study-assistant', {
+              body: { prompt: promptText, message: promptText, query: promptText }
+            });
+            const replyText = (data && (data.reply || data.response || data.answer || data.text)) ||
+              (error && error.message) ||
+              'Connected to gemini-study-assistant. Please verify GEMINI_API_KEY secret on Supabase if no response text was returned.';
+            msgBox.insertAdjacentHTML(
+              'beforeend',
+              '<div class="bg-white p-3.5 rounded-2xl border border-gray-200 text-gray-800 mr-8 shadow-sm">' + escapeHtml(replyText) + '</div>'
+            );
+          } catch (err) {
+            msgBox.insertAdjacentHTML(
+              'beforeend',
+              '<div class="bg-white p-3.5 rounded-2xl border border-red-200 text-red-700 mr-8">Temporary error reaching gemini-study-assistant: ' + escapeHtml(String(err)) + '</div>'
+            );
+          }
+          sendBtn.disabled = false;
+          sendBtn.textContent = 'Ask';
+          msgBox.scrollTop = msgBox.scrollHeight;
+        });
+      }
+
+            if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initApp);
+      } else {
+        initApp();
+      }
+    })();
+  </script>
+</body>
+</html>
