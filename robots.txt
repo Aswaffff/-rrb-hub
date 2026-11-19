@@ -1,0 +1,3 @@
+User-agent: * Allow: /
+
+Sitemap: https://aswaffff.github.io/-rrb-hub/sitemap.xml
